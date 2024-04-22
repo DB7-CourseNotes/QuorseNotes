@@ -11,7 +11,7 @@
     "href": "index.html#this-is-the-quarto-book",
     "title": "Quarto Course Notes",
     "section": "This is the Quarto Book!",
-    "text": "This is the Quarto Book!\nHello."
+    "text": "This is the Quarto Book!\nRendered via:\nquarto render --profile book"
   },
   {
     "objectID": "L01.html#slides-first-mentality",

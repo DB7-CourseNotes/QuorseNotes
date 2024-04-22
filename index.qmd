@@ -2,4 +2,9 @@
 
 ## This is the Quarto Book!
 
-Hello.
+Rendered via:
+
+```sh
+quarto render --profile book
+```
+
