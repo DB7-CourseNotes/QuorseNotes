@@ -1,0 +1,11 @@
+---
+title: "The `_quarto-book.yml` file"
+---
+
+There's a lot more going on in this file!
+
+```{r}
+readLines("_quarto-book.yml") |> paste0("\n") |> cat() 
+```
+
+
