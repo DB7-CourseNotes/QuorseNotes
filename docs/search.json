@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "L01.html#slides-first-mentality",
-    "href": "L01.html#slides-first-mentality",
-    "title": "2  Setup Justification",
-    "section": "2.1 Slides-first mentality",
-    "text": "2.1 Slides-first mentality\n_quarto.yml assumes that the format is going to be beamer slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the _quarto.yml file. This means I prototype my notes as slides, then just kinda assume that the book will look good."
-  },
-  {
-    "objectID": "L01.html#rendering-the-book",
-    "href": "L01.html#rendering-the-book",
-    "title": "2  Setup Justification",
-    "section": "2.2 Rendering the Book",
-    "text": "2.2 Rendering the Book\nquarto render --profile book\nAlternately,\nquarto preview --profile book"
-  },
-  {
-    "objectID": "L01.html#conditional-render-by-project",
-    "href": "L01.html#conditional-render-by-project",
-    "title": "2  Setup Justification",
-    "section": "2.3 Conditional Render by Project",
-    "text": "2.3 Conditional Render by Project\n::: {.content-visible when-profile=\"book\"}\nContent here will only be visible when rendered using --profile book\n:::"
-  },
-  {
-    "objectID": "L02.html#shinylive",
-    "href": "L02.html#shinylive",
-    "title": "3  Some advanced things",
-    "section": "3.1 ShinyLive",
-    "text": "3.1 ShinyLive\nShiny Live allows shiny apps to be run from within the book - without storing the book on a shiny server!\nEvery time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.\n(This repo does not have an example because the extension adds dependencies. I’ll maybe make another repo just to outline the steps I needed to take.)"
-  },
-  {
-    "objectID": "L02.html#quizzes-for-your-lms",
-    "href": "L02.html#quizzes-for-your-lms",
-    "title": "3  Some advanced things",
-    "section": "3.2 Quizzes for your LMS",
-    "text": "3.2 Quizzes for your LMS\nIn my slides, I include something like:\n## Q1\n\nWhich of the following statements is *False*?\n\na. True\nb. False\n\n&lt;!--- B ---&gt;\nI use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format “Q1: A, B, C, or D?”, so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Quarto Course Notes",
@@ -47,5 +12,47 @@
     "title": "Quarto Course Notes",
     "section": "This is the Quarto Book!",
     "text": "This is the Quarto Book!\nHello."
+  },
+  {
+    "objectID": "L01.html#slides-first-mentality",
+    "href": "L01.html#slides-first-mentality",
+    "title": "1  Setup Justification",
+    "section": "1.1 Slides-first mentality",
+    "text": "1.1 Slides-first mentality\n_quarto.yml assumes that the format is going to be beamer slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the _quarto.yml file. This means I prototype my notes as slides, then just kinda assume that the book will look good."
+  },
+  {
+    "objectID": "L01.html#rendering-the-book",
+    "href": "L01.html#rendering-the-book",
+    "title": "1  Setup Justification",
+    "section": "1.2 Rendering the Book",
+    "text": "1.2 Rendering the Book\nquarto render --profile book\nAlternately,\nquarto preview --profile book"
+  },
+  {
+    "objectID": "L01.html#conditional-render-by-project",
+    "href": "L01.html#conditional-render-by-project",
+    "title": "1  Setup Justification",
+    "section": "1.3 Conditional Render by Project",
+    "text": "1.3 Conditional Render by Project\n::: {.content-visible when-profile=\"book\"}\nContent here will only be visible when rendered using --profile book\n:::"
+  },
+  {
+    "objectID": "L01.html#publishing-on-github",
+    "href": "L01.html#publishing-on-github",
+    "title": "1  Setup Justification",
+    "section": "1.4 Publishing on GitHub",
+    "text": "1.4 Publishing on GitHub\nThe _quarto-book.yml file puts the book in the “docs” folder, which is a required name! GitHub allows you to serve a static site from the docs page."
+  },
+  {
+    "objectID": "L02.html#shinylive",
+    "href": "L02.html#shinylive",
+    "title": "2  Some advanced things",
+    "section": "2.1 ShinyLive",
+    "text": "2.1 ShinyLive\nShiny Live allows shiny apps to be run from within the book - without storing the book on a shiny server!\nEvery time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.\n(This repo does not have an example because the extension adds dependencies. I’ll maybe make another repo just to outline the steps I needed to take.)"
+  },
+  {
+    "objectID": "L02.html#quizzes-for-your-lms",
+    "href": "L02.html#quizzes-for-your-lms",
+    "title": "2  Some advanced things",
+    "section": "2.2 Quizzes for your LMS",
+    "text": "2.2 Quizzes for your LMS\nIn my slides, I include something like:\n## Q1\n\nWhich of the following statements is *False*?\n\na. True\nb. False\n\n&lt;!--- B ---&gt;\nI use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format “Q1: A, B, C, or D?”, so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool."
   }
 ]

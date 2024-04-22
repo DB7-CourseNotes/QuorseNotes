@@ -24,4 +24,7 @@ Content here will only be visible when rendered using --profile book
 :::
 ```
 
+## Publishing on GitHub
+
+The `_quarto-book.yml` file puts the book in the "docs" folder, which is a required name! GitHub allows you to serve a static site from the docs page.
 
