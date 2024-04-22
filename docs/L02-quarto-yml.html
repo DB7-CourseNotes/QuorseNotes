@@ -253,43 +253,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>Let’s go through the file line-by-line.</p>
-<div class="cell" data-hash="L02-quarto-yml_cache/html/unnamed-chunk-1_944e8e434dcefd9b0e778bb8174b58a7">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readLines</span>(<span class="st">"_quarto.yml"</span>) <span class="sc">|&gt;</span> <span class="fu">paste0</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>project:
-   output-dir: Slides
- 
- date-fromat: iso
- date: "last-modified"
- author: "Dr. Devan Becker"
- institute: "Wilfrid Laurier University"
- 
- execute:
-   warning: false
-   cache: true
-   freeze: auto
- 
- format: 
-   beamer:
-     theme: Madrid
-     colortheme: PrimaryBullets
-     aspectratio: 169
-     toc: false
-     include-in-header: "defs_beamer.tex"
-     execute:
-       echo: false
-       fig-width: 7
-       fig-height: 3.5
-       code-line-numbers: false</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> Slides</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date-fromat</span><span class="kw">:</span><span class="at"> iso</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"last-modified"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Dr. Devan Becker"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">institute</span><span class="kw">:</span><span class="at"> </span><span class="st">"Wilfrid Laurier University"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>project:</code> defines the project-wide options.
 <ul>
 <li><code>output-dir: Slides</code> puts the output pdfs when <strong>not</strong> rendering a book into the <code>Slides/</code> folder.</li>
 </ul></li>
 <li><code>date-format</code> to <code>institute</code> are self-explanatory.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">freeze</span><span class="kw">:</span><span class="at"> auto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
 <li>The <code>execute</code> options will apply to everything (I think - doesn’t work for all options).</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> Madrid</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">colortheme</span><span class="kw">:</span><span class="at"> PrimaryBullets</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">aspectratio</span><span class="kw">:</span><span class="at"> </span><span class="dv">169</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span><span class="st">"defs_beamer.tex"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">fig-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">3.5</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">code-line-numbers</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
 <li><code>format</code> defines the format, but only when the profile is <strong>not</strong> set to <code>book</code>.
 <ul>
 <li><code>beamer</code> produces pdf slides, using the <span class="math inline">\(\LaTeX\)</span> <code>beamer</code> class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.

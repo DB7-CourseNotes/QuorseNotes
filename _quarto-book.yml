@@ -12,9 +12,9 @@ book:
   page-footer:
     left: |
       Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.
-  page-navigation: true
   sidebar: 
     collapse-level: 2
+  page-navigation: true
   chapters:
     - index.qmd
     - part: Setup

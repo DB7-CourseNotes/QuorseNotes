@@ -4,14 +4,45 @@ title: "The `_quarto.yml` file"
 
 Let's go through the file line-by-line.
 
-```{r}
-readLines("_quarto.yml") |> paste0("\n") |> cat() 
+```yml
+project:
+  output-dir: Slides
+
+date-fromat: iso
+date: "last-modified"
+author: "Dr. Devan Becker"
+institute: "Wilfrid Laurier University"
 ```
 
 - `project:` defines the project-wide options. 
     - `output-dir: Slides` puts the output pdfs when **not** rendering a book into the `Slides/` folder.
 - `date-format` to `institute` are self-explanatory.
+
+
+```yml
+execute:
+  warning: false
+  cache: true
+  freeze: auto
+```
+
 - The `execute` options will apply to everything (I think - doesn't work for all options).
+
+```yml
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: PrimaryBullets
+    aspectratio: 169
+    toc: false
+    include-in-header: "defs_beamer.tex"
+    execute:
+      echo: false
+      fig-width: 7
+      fig-height: 3.5
+      code-line-numbers: false
+```
+
 - `format` defines the format, but only when the profile is **not** set to `book`.
     - `beamer` produces pdf slides, using the $\LaTeX$ `beamer` class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.
         - `theme: Madrid` is specific to the beamer class.
