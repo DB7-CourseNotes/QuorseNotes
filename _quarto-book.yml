@@ -29,8 +29,8 @@ book:
 format:
   html:
     theme:
-      light: [flatly, smaller_lists.scss]
-      dark: [darkly, smaller_lists.scss]
+      light: [sandstone, smaller_lists.scss]
+      dark: [superhero, smaller_lists.scss]
     mainfont: ubuntu, sans-serif
     exectue:
       echo: true
