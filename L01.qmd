@@ -4,6 +4,8 @@
 
 `_quarto.yml` assumes that the format is going to be `beamer` slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the `_quarto.yml` file. This means I prototype my notes as slides, then just kinda assume that the book will look good.
 
+The `_quarto-book.yml` has a special name. The `-book` part tells quarto that it's part of the "Book" project.
+
 ## Rendering the Book
 
 ```sh

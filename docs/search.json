@@ -18,7 +18,7 @@
     "href": "L01.html#slides-first-mentality",
     "title": "1  Setup Justification",
     "section": "1.1 Slides-first mentality",
-    "text": "1.1 Slides-first mentality\n_quarto.yml assumes that the format is going to be beamer slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the _quarto.yml file. This means I prototype my notes as slides, then just kinda assume that the book will look good."
+    "text": "1.1 Slides-first mentality\n_quarto.yml assumes that the format is going to be beamer slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the _quarto.yml file. This means I prototype my notes as slides, then just kinda assume that the book will look good.\nThe _quarto-book.yml has a special name. The -book part tells quarto that it’s part of the “Book” project."
   },
   {
     "objectID": "L01.html#rendering-the-book",
