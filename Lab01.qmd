@@ -1,0 +1,7 @@
+---
+title: "R lab 1"
+---
+
+```{r}
+plot(mpg ~ wt, data = mtcars)
+```
