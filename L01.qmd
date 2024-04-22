@@ -1,4 +1,6 @@
-# Setup Justification
+---
+title: "Setup Justification"
+---
 
 ## Slides-first mentality
 
