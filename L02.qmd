@@ -1,0 +1,26 @@
+# Some advanced things
+
+## ShinyLive
+
+[Shiny Live](https://topepo.github.io/shinylive-in-book-test/) allows shiny apps to be run from within the book - without storing the book on a shiny server!
+
+Every time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.
+
+(This repo does not have an example because the extension adds dependencies. I'll maybe make another repo just to outline the steps I needed to take.)
+
+## Quizzes for your LMS
+
+In my slides, I include something like:
+
+```md
+## Q1
+
+Which of the following statements is *False*?
+
+a. True
+b. False
+
+<!--- B --->
+```
+
+I use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format "Q1: A, B, C, or D?", so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool.

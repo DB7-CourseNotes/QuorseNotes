@@ -1,0 +1,37 @@
+project:
+  type: book
+  output-dir: docs
+
+number-depth: 2
+
+book:
+  title: "Quarto Course Notes"
+  subtitle: "Slides and a Book"
+  repo-url: https://github.com/DB7-CourseNotes/QuorseNotes
+  repo-actions: [issue, source]  
+  page-footer:
+    left: |
+      Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.
+  page-navigation: true
+  sidebar: 
+    collapse-level: 2
+  chapters:
+    - index.qmd
+    - part: Setup
+      chapters:
+        - L01.qmd
+    - part: Slides and Book
+      chapters:
+        - L02.qmd
+  appendices:
+    - Lab01.qmd
+
+format:
+  html:
+    theme:
+      light: [flatly, smaller_lists.scss]
+      dark: [darkly, smaller_lists.scss]
+    mainfont: ubuntu, sans-serif
+    exectue:
+      echo: true
+      code-fold: true

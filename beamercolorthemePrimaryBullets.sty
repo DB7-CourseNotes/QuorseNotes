@@ -1,0 +1,113 @@
+% Modified from a file by Madhusudan Singh <madhusudan.singh@gmail.com>
+% Modified by Devan Becker
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\mode<presentation>
+
+\definecolor{primary_colour}{HTML}{0077A2} % Laurier Teal
+\definecolor{square_2}{HTML}{5b2059} % colortools::square("#0077A2")
+\definecolor{square_3}{HTML}{A22B00} 
+\definecolor{square_4}{HTML}{26A200} 
+
+% Colours taken from https://carbondesignsystem.com/data-visualization/color-palettes/
+% In particular, the "70" values
+\definecolor{pal_purple}{HTML}{6929c4}
+\definecolor{pal_magenta}{HTML}{9f1853}
+\definecolor{pal_green}{HTML}{198038} % green 60, not 70
+\definecolor{pal_yellow}{HTML}{b28600}
+\definecolor{pal_orange}{HTML}{8a3800}
+\definecolor{pal_blue}{HTML}{00539a} % cyan
+\definecolor{pal_teal}{HTML}{005d5d}
+\definecolor{pal_red}{HTML}{a2191f}
+
+
+
+%\definecolor{MSUgreen}{RGB}{0,102,51} % replace primary_colour with MSUgreen for spruce theme
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=pal_teal!80!gray}
+\setbeamercolor*{palette primary}{fg=pal_teal!60!black,bg=gray!30!white}
+\setbeamercolor*{palette secondary}{fg=pal_teal!70!black,bg=gray!15!white}
+\setbeamercolor*{palette tertiary}{bg=pal_teal!80!black,fg=gray!10!white}
+\setbeamercolor*{palette quaternary}{fg=pal_teal,bg=gray!5!white}
+
+\setbeamercolor*{sidebar}{fg=pal_teal,bg=gray!15!white}
+
+\setbeamercolor*{palette sidebar primary}{fg=pal_teal!10!black}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{fg=pal_teal!50!black}
+\setbeamercolor*{palette sidebar quaternary}{fg=gray!10!white}
+
+%\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor{titlelike}{parent=palette primary,fg=pal_teal}
+\setbeamercolor{frametitle}{bg=gray!10!white}
+\setbeamercolor{frametitle right}{bg=gray!60!white}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+% my own added things - probably can be deleted
+%\useinnertheme[shadow]{rounded}
+%\useoutertheme[subsection=true]{smoothbars}
+\setbeamercolor{purp}{fg=white,bg=pal_purple}
+\setbeamercolor{pin}{fg=white,bg=pal_magenta}
+\setbeamercolor{tea}{fg=white,bg=pal_teal}
+\setbeamercolor{blu}{fg=white,bg=pal_blue}
+\setbeamercolor{ora}{fg=white,bg=pal_orange}
+\setbeamercolor{gree}{fg=white,bg=pal_green}
+\setbeamercolor{yell}{fg=white,bg=pal_yellow}
+\defbeamertemplate*{footline}{shadow theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.41\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{tea}%
+    \centering \inserttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.18\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{purp}%
+    \centering Dr. Devan Becker
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.18\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{pin}%
+    \centering Wilfrid Laurier University
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.18\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{ora}%
+    \centering dbecker@wlu.ca
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.1cm,rightskip=.1cm plus1fil]{yell}%
+    \quad\quad  \insertframenumber
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{itemize item}{fg=pal_teal}
+\setbeamertemplate{itemize subitem}{\raisebox{0.1em}{\scalebox{0.8}{$\blacktriangleright$}}}
+\setbeamercolor{itemize subitem}{fg=pal_teal}
+\setbeamertemplate{itemize subsubitem}{\raisebox{0.1em}{\scalebox{0.6}{$\blacktriangleright$}}}
+\setbeamercolor{itemize subsubitem}{fg=pal_teal}
+
+\setbeamertemplate{section number projected}[circle]
+\setbeamercolor{section number projected}{fg=white, bg=pal_teal}
+\setbeamercolor{section in toc}{fg=pal_teal}
+\setbeamercolor{sections/subsections in toc}{fg=pal_teal}
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\setbeamercolor{item projected}{bg=pal_teal}
+\setbeamertemplate{enumerate items}[circle]
+\setbeamercolor{enumerate items}{fg=white, bg=pal_teal}
+\setbeamercolor{enumerate subitem}{fg=pal_teal}
+
+% Modifying beamer blocks
+\setbeamertemplate{blocks}[default]
+\setbeamercolor{block title}{fg=white, bg=pal_teal}
+\setbeamercolor{block body}{fg=black, bg=pal_teal!10!white}
+\setbeamercolor{block title alerted}{fg=white, bg=square_3}
+\setbeamercolor{block body alerted}{fg=black, bg=square_3!10!white}
+\setbeamercolor{block title example}{fg=white, bg=square_4}
+\setbeamercolor{block body example}{fg=black, bg=square_4!10!white}
+
+\mode
+<all>
