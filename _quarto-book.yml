@@ -22,7 +22,8 @@ book:
         - L01.qmd
     - part: Slides and Book
       chapters:
-        - L02.qmd
+        - L02-quarto-yml.qmd
+        - L03-quarto-book-yml.qmd
   appendices:
     - Lab01.qmd
 
@@ -32,6 +33,6 @@ format:
       light: [sandstone, smaller_lists.scss]
       dark: [superhero, smaller_lists.scss]
     mainfont: ubuntu, sans-serif
-    exectue:
+    execute:
       echo: true
       code-fold: true
