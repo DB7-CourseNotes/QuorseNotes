@@ -1,0 +1,14 @@
+{
+  "hash": "afa3d3c03216950133404bad34bcb270",
+  "result": {
+    "markdown": "---\ntitle: \"The `_quarto-book.yml` file\"\n---\n\n\nThere's a lot more going on in this file!\n\n\n::: {.cell hash='L03-quarto-book-yml_cache/html/unnamed-chunk-1_40ad4867e72d4b2772d33b72fc45a263'}\n\n```{.r .cell-code}\nreadLines(\"_quarto-book.yml\") |> paste0(\"\\n\") |> cat() \n```\n\n::: {.cell-output .cell-output-stdout}\n```\nproject:\n   type: book\n   output-dir: docs\n \n number-depth: 2\n \n book:\n   title: \"Quarto Course Notes\"\n   subtitle: \"Slides and a Book\"\n   repo-url: https://github.com/DB7-CourseNotes/QuorseNotes\n   repo-actions: [issue, source]  \n   page-footer:\n     left: |\n       Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.\n   page-navigation: true\n   sidebar: \n     collapse-level: 2\n   chapters:\n     - index.qmd\n     - part: Setup\n       chapters:\n         - L01.qmd\n     - part: Slides and Book\n       chapters:\n         - L02-quarto-yml.qmd\n         - L03-quarto-book-yml.qmd\n   appendices:\n     - Lab01.qmd\n \n format:\n   html:\n     theme:\n       light: [sandstone, smaller_lists.scss]\n       dark: [superhero, smaller_lists.scss]\n     mainfont: ubuntu, sans-serif\n     exectue:\n       echo: true\n       code-fold: true\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

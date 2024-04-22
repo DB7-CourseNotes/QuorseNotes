@@ -1,0 +1,14 @@
+{
+  "hash": "5debb84a7c5a251157f59aa906ce673c",
+  "result": {
+    "markdown": "---\ntitle: \"R lab 1\"\n---\n\n::: {.cell hash='Lab01_cache/html/unnamed-chunk-1_d53f7cf72833d4afe7e8b6b05a0d943e'}\n\n```{.r .cell-code}\nplot(mpg ~ wt, data = mtcars)\n```\n\n::: {.cell-output-display}\n![](Lab01_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

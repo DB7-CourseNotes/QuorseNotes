@@ -9,7 +9,7 @@
 <meta name="author" content="Dr.&nbsp;Devan Becker">
 <meta name="dcterms.date" content="2024-04-22">
 
-<title>Quarto Course Notes - 2&nbsp; Some advanced things</title>
+<title>Quarto Course Notes - 2&nbsp; The _quarto.yml file</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Lab01.html" rel="next">
+<link href="./L03-quarto-book-yml.html" rel="next">
 <link href="./L01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -99,6 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -111,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./L02.html">Slides and Book</a></li><li class="breadcrumb-item"><a href="./L02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Some advanced things</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./L02-quarto-yml.html">Slides and Book</a></li><li class="breadcrumb-item"><a href="./L02-quarto-yml.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The `_quarto.yml` file</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -174,8 +176,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./L02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Some advanced things</span></span></a>
+  <a href="./L02-quarto-yml.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The <code>_quarto.yml</code> file</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./L03-quarto-book-yml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The <code>_quarto-book.yml</code> file</span></span></a>
   </div>
 </li>
       </ul>
@@ -192,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Lab01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Lab01.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">R lab 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,21 +211,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#shinylive" id="toc-shinylive" class="nav-link active" data-scroll-target="#shinylive"><span class="header-section-number">2.1</span> ShinyLive</a></li>
-  <li><a href="#quizzes-for-your-lms" id="toc-quizzes-for-your-lms" class="nav-link" data-scroll-target="#quizzes-for-your-lms"><span class="header-section-number">2.2</span> Quizzes for your LMS</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/L02.qmd" class="toc-action">View source</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Some advanced things</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The <code>_quarto.yml</code> file</span></h1>
 </div>
 
 
@@ -251,27 +252,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="shinylive" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="shinylive"><span class="header-section-number">2.1</span> ShinyLive</h2>
-<p><a href="https://topepo.github.io/shinylive-in-book-test/">Shiny Live</a> allows shiny apps to be run from within the book - without storing the book on a shiny server!</p>
-<p>Every time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.</p>
-<p>(This repo does not have an example because the extension adds dependencies. I’ll maybe make another repo just to outline the steps I needed to take.)</p>
-</section>
-<section id="quizzes-for-your-lms" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="quizzes-for-your-lms"><span class="header-section-number">2.2</span> Quizzes for your LMS</h2>
-<p>In my slides, I include something like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Q1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Which of the following statements is *False*?</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a. True</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>b. False</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--- B ---&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>I use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format “Q1: A, B, C, or D?”, so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool.</p>
+<p>Let’s go through the file line-by-line.</p>
+<div class="cell" data-hash="L02-quarto-yml_cache/html/unnamed-chunk-1_944e8e434dcefd9b0e778bb8174b58a7">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readLines</span>(<span class="st">"_quarto.yml"</span>) <span class="sc">|&gt;</span> <span class="fu">paste0</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>project:
+   output-dir: Slides
+ 
+ date-fromat: iso
+ date: "last-modified"
+ author: "Dr. Devan Becker"
+ institute: "Wilfrid Laurier University"
+ 
+ execute:
+   warning: false
+   cache: true
+   freeze: auto
+ 
+ format: 
+   beamer:
+     theme: Madrid
+     colortheme: PrimaryBullets
+     aspectratio: 169
+     toc: false
+     include-in-header: "defs_beamer.tex"
+     execute:
+       echo: false
+       fig-width: 7
+       fig-height: 3.5
+       code-line-numbers: false</code></pre>
+</div>
+</div>
+<ul>
+<li><code>project:</code> defines the project-wide options.
+<ul>
+<li><code>output-dir: Slides</code> puts the output pdfs when <strong>not</strong> rendering a book into the <code>Slides/</code> folder.</li>
+</ul></li>
+<li><code>date-format</code> to <code>institute</code> are self-explanatory.</li>
+<li>The <code>execute</code> options will apply to everything (I think - doesn’t work for all options).</li>
+<li><code>format</code> defines the format, but only when the profile is <strong>not</strong> set to <code>book</code>.
+<ul>
+<li><code>beamer</code> produces pdf slides, using the <span class="math inline">\(\LaTeX\)</span> <code>beamer</code> class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.
+<ul>
+<li><code>theme: Madrid</code> is specific to the beamer class.</li>
+<li><code>colortheme: PrimaryBullets</code> uses my custom beamer colortheme (which also affects the theme. this is bad programming on my part, but it looks nice). If you use this, you should change the name, institution, and email in the definition!</li>
+<li><code>aspectratio</code> and <code>toc</code> (table of contents), are beamer specific settings.</li>
+<li><code>include-in-header</code> uses a custom <span class="math inline">\(\LaTeX\)</span> definition file for spacing in books versus slides. See below.</li>
+<li><code>execute</code> makes figures the right size for 16x9 slides. It also makes <code>echo</code> false by default (the book uses <code>true</code> by default).</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>For <code>include-in-header: defs_beamer.tex</code>, I use two special commands to make sure that I can control spacing in the slides and the book separately. In slides, I want to add spacing between lists. The <code>\lspace</code> command is defined as <code>\newline</code> if the file is executed without <code>profile --book</code>, and it’s defined as nothing if the profile is set to <code>book</code>. Similarly, <code>\pspace</code> adds a space between paragraphs if the book is rendering to slides and does nothing for the book.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -629,8 +662,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Lab01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Lab01.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./L03-quarto-book-yml.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The <code>_quarto-book.yml</code> file</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -640,7 +673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/L02-quarto-yml.qmd" class="toc-action">View source</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

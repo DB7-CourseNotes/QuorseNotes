@@ -1,0 +1,14 @@
+{
+  "hash": "50a39330097b25ec0274412df9b9adaf",
+  "result": {
+    "markdown": "---\ntitle: \"The `_quarto.yml` file\"\n---\n\n\nLet's go through the file line-by-line.\n\n\n::: {.cell hash='L02-quarto-yml_cache/html/unnamed-chunk-1_944e8e434dcefd9b0e778bb8174b58a7'}\n\n```{.r .cell-code}\nreadLines(\"_quarto.yml\") |> paste0(\"\\n\") |> cat() \n```\n\n::: {.cell-output .cell-output-stdout}\n```\nproject:\n   output-dir: Slides\n \n date-fromat: iso\n date: \"last-modified\"\n author: \"Dr. Devan Becker\"\n institute: \"Wilfrid Laurier University\"\n \n execute:\n   warning: false\n   cache: true\n   freeze: auto\n \n format: \n   beamer:\n     theme: Madrid\n     colortheme: PrimaryBullets\n     aspectratio: 169\n     toc: false\n     include-in-header: \"defs_beamer.tex\"\n     execute:\n       echo: false\n       fig-width: 7\n       fig-height: 3.5\n       code-line-numbers: false\n```\n:::\n:::\n\n\n- `project:` defines the project-wide options. \n    - `output-dir: Slides` puts the output pdfs when **not** rendering a book into the `Slides/` folder.\n- `date-format` to `institute` are self-explanatory.\n- The `execute` options will apply to everything (I think - doesn't work for all options).\n- `format` defines the format, but only when the profile is **not** set to `book`.\n    - `beamer` produces pdf slides, using the $\\LaTeX$ `beamer` class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.\n        - `theme: Madrid` is specific to the beamer class.\n        - `colortheme: PrimaryBullets` uses my custom beamer colortheme (which also affects the theme. this is bad programming on my part, but it looks nice). If you use this, you should change the name, institution, and email in the definition!\n        - `aspectratio` and `toc` (table of contents), are beamer specific settings.\n        - `include-in-header` uses a custom $\\LaTeX$ definition file for spacing in books versus slides. See below.\n        - `execute` makes figures the right size for 16x9 slides. It also makes `echo` false by default (the book uses `true` by default).\n\nFor `include-in-header: defs_beamer.tex`, I use two special commands to make sure that I can control spacing in the slides and the book separately. In slides, I want to add spacing between lists. The `\\lspace` command is defined as `\\newline` if the file is executed without `profile --book`, and it's defined as nothing if the profile is set to `book`. Similarly, `\\pspace` adds a space between paragraphs if the book is rendering to slides and does nothing for the book.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

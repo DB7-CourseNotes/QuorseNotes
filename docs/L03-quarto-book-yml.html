@@ -9,7 +9,7 @@
 <meta name="author" content="Dr.&nbsp;Devan Becker">
 <meta name="dcterms.date" content="2024-04-22">
 
-<title>Quarto Course Notes</title>
+<title>Quarto Course Notes - 3&nbsp; The _quarto-book.yml file</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./L01.html" rel="next">
+<link href="./Lab01.html" rel="next">
+<link href="./L02-quarto-yml.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./L02-quarto-yml.html">Slides and Book</a></li><li class="breadcrumb-item"><a href="./L03-quarto-book-yml.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The `_quarto-book.yml` file</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -179,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./L03-quarto-book-yml.html" class="sidebar-item-text sidebar-link">
+  <a href="./L03-quarto-book-yml.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The <code>_quarto-book.yml</code> file</span></span></a>
   </div>
 </li>
@@ -208,24 +209,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#this-is-the-quarto-book" id="toc-this-is-the-quarto-book" class="nav-link" data-scroll-target="#this-is-the-quarto-book">This is the Quarto Book!</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/index.qmd" class="toc-action">View source</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto Course Notes</h1>
-<p class="subtitle lead">Slides and a Book</p>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The <code>_quarto-book.yml</code> file</span></h1>
 </div>
 
 
@@ -259,16 +250,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<section id="this-is-the-quarto-book" class="level2">
-<h2 class="anchored" data-anchor-id="this-is-the-quarto-book">This is the Quarto Book!</h2>
-<p>Rendered via:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render <span class="at">--profile</span> book</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There’s a lot more going on in this file!</p>
+<div class="cell" data-hash="L03-quarto-book-yml_cache/html/unnamed-chunk-1_40ad4867e72d4b2772d33b72fc45a263">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readLines</span>(<span class="st">"_quarto-book.yml"</span>) <span class="sc">|&gt;</span> <span class="fu">paste0</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>project:
+   type: book
+   output-dir: docs
+ 
+ number-depth: 2
+ 
+ book:
+   title: "Quarto Course Notes"
+   subtitle: "Slides and a Book"
+   repo-url: https://github.com/DB7-CourseNotes/QuorseNotes
+   repo-actions: [issue, source]  
+   page-footer:
+     left: |
+       Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.
+   page-navigation: true
+   sidebar: 
+     collapse-level: 2
+   chapters:
+     - index.qmd
+     - part: Setup
+       chapters:
+         - L01.qmd
+     - part: Slides and Book
+       chapters:
+         - L02-quarto-yml.qmd
+         - L03-quarto-book-yml.qmd
+   appendices:
+     - Lab01.qmd
+ 
+ format:
+   html:
+     theme:
+       light: [sandstone, smaller_lists.scss]
+       dark: [superhero, smaller_lists.scss]
+     mainfont: ubuntu, sans-serif
+     exectue:
+       echo: true
+       code-fold: true</code></pre>
+</div>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -621,10 +648,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./L02-quarto-yml.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The <code>_quarto.yml</code> file</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./L01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setup Justification</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Lab01.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">R lab 1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -634,7 +664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/L03-quarto-book-yml.qmd" class="toc-action">View source</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
