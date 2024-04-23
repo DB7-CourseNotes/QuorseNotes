@@ -26,7 +26,8 @@ book:
         - L03-quarto-book-yml.qmd
         - L05-advanced.qmd
   appendices:
-    - Lab01.qmd
+    - Lab01-R.Rmd
+    - Lab02-Python.ipynb
 
 format:
   html:

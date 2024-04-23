@@ -1,5 +1,5 @@
 ---
-title: "R lab 1"
+title: "R Lab 1"
 ---
 
 ```{r}
