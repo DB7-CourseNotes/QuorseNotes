@@ -1,0 +1,60 @@
+---
+title: "Quorse Notes"
+subtitle: "Building a Book from Slides"
+---
+
+## Introduction
+
+### Overview
+
+- These are slides... or are they?
+
+::: {.content-visible unless-profile="book"}
+If you're reading this, then yes they are!!!
+:::
+
+::: {.content-visible when-profile="book"}
+If you're reading this, the answer is no! This is a portion that is only visible when compiled as a book!
+:::
+
+### Workflow Preview
+
+Once everything is set up:
+
+\pspace
+
+- Make slides (or adapt from elsewhere)\lspace
+- Add in participation activities\lspace
+- Do some live demonstrations in class\lspace
+- Push to GitHub after class
+    - Everything is now available to the students
+
+### Main Benefits
+
+- Open source and reproducible\lspace
+- Easy to use, searchable book for students including all information from class\lspace
+- One extra step on top of Quarto slides!
+
+## Introduction to Quarto
+
+### `qmd` versus `Rmd`
+
+If you rename `myfile.Rmd` to `myfile.qmd`, it works exactly the same.
+
+`qmd` is the next generation of RMarkdown.
+
+\pspace
+
+- More code options
+- More output options
+- More language options (python, julia, lua, etc.)
+- More editor options
+
+### The General Quarto Idea
+
+One input file, many outputs.
+
+\pspace
+
+
+
