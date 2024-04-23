@@ -23,10 +23,33 @@ b. False
 <!--- B --->
 ```
 
-I use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format "Q1: A, B, C, or D?", so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool.
+A custom R script extracts the "B" from the comment string, then formats an MC question according to my LMS. 
 
-## Partially Populated Slides (Full Notes)
+The question is shown only on the slides, students answer on the LMS.
+
+::: {.content-visible when-profile="book"}
+This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool.
+:::
+
+## Partially Populated Slides with Full Notes
 
 ```{r}
-Sys.getenv("QUARTO_PROJECT")
+#| echo: true
+Sys.getenv("QUARTO_PROFILE")
 ```
+
+\pspace
+
+Using the profile in R:
+
+```{r}
+blank <- function(x) {
+    if(Sys.getenv("QUARTO_PROFILE") == "book") {
+        return(x)
+    } else {
+        return("________")
+    }
+}
+```
+
+Forgetful Sally was so forgetful that when she tried to remember something she drew a `r blank("blank")`.
