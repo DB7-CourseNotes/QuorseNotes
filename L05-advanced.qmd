@@ -24,3 +24,9 @@ b. False
 ```
 
 I use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format "Q1: A, B, C, or D?", so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool.
+
+## Partially Populated Slides (Full Notes)
+
+```{r}
+Sys.getenv("QUARTO_PROJECT")
+```

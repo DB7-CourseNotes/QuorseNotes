@@ -24,6 +24,7 @@ book:
       chapters:
         - L02-quarto-yml.qmd
         - L03-quarto-book-yml.qmd
+        - L05-advanced.qmd
   appendices:
     - Lab01.qmd
 
