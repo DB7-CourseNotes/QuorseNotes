@@ -1,3 +1,4 @@
 Slides/*
 /.quarto/
 *cache*
+*_freeze*
