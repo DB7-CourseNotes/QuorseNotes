@@ -67,20 +67,27 @@
     "href": "L05-advanced.html#quizzes-for-your-lms",
     "title": "4  Some advanced things",
     "section": "4.2 Quizzes for your LMS",
-    "text": "4.2 Quizzes for your LMS\nIn my slides, I include something like:\n## Q1\n\nWhich of the following statements is *False*?\n\na. True\nb. False\n\n&lt;!--- B ---&gt;\nI use a custom R script to find a string like the last one, and it extracts the answer and makes a question that can be uploaded to my LMS. The questions are just of the format “Q1: A, B, C, or D?”, so the students answer in the LMS but only see the actual questions on the slides. This is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool."
+    "text": "4.2 Quizzes for your LMS\nIn my slides, I include something like:\n## Q1\n\nWhich of the following statements is *False*?\n\na. True\nb. False\n\n&lt;!--- B ---&gt;\nA custom R script extracts the “B” from the comment string, then formats an MC question according to my LMS.\nThe question is shown only on the slides, students answer on the LMS.\nThis is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool."
   },
   {
-    "objectID": "L05-advanced.html#partially-populated-slides-full-notes",
-    "href": "L05-advanced.html#partially-populated-slides-full-notes",
+    "objectID": "L05-advanced.html#partially-populated-slides-with-full-notes",
+    "href": "L05-advanced.html#partially-populated-slides-with-full-notes",
     "title": "4  Some advanced things",
-    "section": "4.3 Partially Populated Slides (Full Notes)",
-    "text": "4.3 Partially Populated Slides (Full Notes)\n\nSys.getenv(\"QUARTO_PROJECT\")\n\n[1] \"\""
+    "section": "4.3 Partially Populated Slides with Full Notes",
+    "text": "4.3 Partially Populated Slides with Full Notes\n\nSys.getenv(\"QUARTO_PROFILE\")\n\n[1] \"book\"\n\n\nUsing the profile in R:\n\nblank &lt;- function(x) {\n    if(Sys.getenv(\"QUARTO_PROFILE\") == \"book\") {\n        return(x)\n    } else {\n        return(\"________\")\n    }\n}\n\nForgetful Sally was so forgetful that when she tried to remember something she drew a blank."
   },
   {
-    "objectID": "Lab01.html",
-    "href": "Lab01.html",
-    "title": "Appendix A — R lab 1",
+    "objectID": "Lab01-R.html",
+    "href": "Lab01-R.html",
+    "title": "Appendix A — R Lab 1",
     "section": "",
     "text": "plot(mpg ~ wt, data = mtcars)"
+  },
+  {
+    "objectID": "Lab02-Python.html",
+    "href": "Lab02-Python.html",
+    "title": "Appendix B — Python Lab 1",
+    "section": "",
+    "text": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\n\n\nx = np.random.uniform(0, 10, 50)\ne = np.random.normal(0, 3, x.size)\ny = 12 - 5 * x + e\n\nplt.scatter(x, y)\nplt.show()"
   }
 ]
