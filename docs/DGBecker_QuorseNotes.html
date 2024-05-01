@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-04-22">
+<meta name="dcterms.date" content="2024-05-01">
 
-<title>Quarto Course Notes</title>
+<title>Quarto Course Notes - Appendix C — Quorse Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,7 +32,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./L01.html" rel="next">
+<link href="./Lab02-Python.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -214,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link">
+  <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes</span></span></a>
   </div>
 </li>
@@ -230,20 +196,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">C.1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#this-is-the-quarto-book" id="toc-this-is-the-quarto-book" class="nav-link" data-scroll-target="#this-is-the-quarto-book">This is the Quarto Book!</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#workflow-preview" id="toc-workflow-preview" class="nav-link" data-scroll-target="#workflow-preview">Workflow Preview</a></li>
+  <li><a href="#main-benefits" id="toc-main-benefits" class="nav-link" data-scroll-target="#main-benefits">Main Benefits</a></li>
+  </ul></li>
+  <li><a href="#introduction-to-quarto" id="toc-introduction-to-quarto" class="nav-link" data-scroll-target="#introduction-to-quarto"><span class="header-section-number">C.2</span> Introduction to Quarto</a>
+  <ul class="collapse">
+  <li><a href="#qmd-versus-rmd" id="toc-qmd-versus-rmd" class="nav-link" data-scroll-target="#qmd-versus-rmd"><code>qmd</code> versus <code>Rmd</code></a></li>
+  <li><a href="#the-general-quarto-idea" id="toc-the-general-quarto-idea" class="nav-link" data-scroll-target="#the-general-quarto-idea">The General Quarto Idea</a></li>
+  </ul></li>
+  <li><a href="#setup-steps" id="toc-setup-steps" class="nav-link" data-scroll-target="#setup-steps"><span class="header-section-number">C.3</span> Setup Steps</a>
+  <ul class="collapse">
+  <li><a href="#the-yaml-files" id="toc-the-yaml-files" class="nav-link" data-scroll-target="#the-yaml-files">The YAML files</a></li>
+  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a></li>
+  </ul></li>
+  <li><a href="#authoring" id="toc-authoring" class="nav-link" data-scroll-target="#authoring"><span class="header-section-number">C.4</span> Authoring</a>
+  <ul class="collapse">
+  <li><a href="#conditional-rendering" id="toc-conditional-rendering" class="nav-link" data-scroll-target="#conditional-rendering">Conditional Rendering</a></li>
+  <li><a href="#previewing" id="toc-previewing" class="nav-link" data-scroll-target="#previewing">Previewing</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/index.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/DGBecker_QuorseNotes.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto Course Notes</h1>
-<p class="subtitle lead">Slides and a Book</p>
+<h1 class="title">Appendix C — Quorse Notes</h1>
+<p class="subtitle lead">Building a Book from Slides</p>
 </div>
 
 
@@ -267,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 22, 2024</p>
+      <p class="date">May 1, 2024</p>
     </div>
   </div>
   
@@ -277,12 +260,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<section id="this-is-the-quarto-book" class="level2">
-<h2 class="anchored" data-anchor-id="this-is-the-quarto-book">This is the Quarto Book!</h2>
-<p>Rendered via:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render <span class="at">--profile</span> book</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="introduction" class="level2" data-number="C.1">
+<h2 data-number="C.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">C.1</span> Introduction</h2>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<ul>
+<li>These are slides… or are they?</li>
+</ul>
+<p>If you’re reading this, the answer is no! This is a portion that is only visible when compiled as a book!</p>
+</section>
+<section id="workflow-preview" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-preview">Workflow Preview</h3>
+<p>Once everything is set up:</p>
+<ul>
+<li>Make slides (or adapt from elsewhere)</li>
+<li>Add in participation activities</li>
+<li>Do some live demonstrations in class</li>
+<li>Push to GitHub after class
+<ul>
+<li>Everything is now available to the students</li>
+</ul></li>
+</ul>
+</section>
+<section id="main-benefits" class="level3">
+<h3 class="anchored" data-anchor-id="main-benefits">Main Benefits</h3>
+<ul>
+<li>Open source and reproducible</li>
+<li>Easy to use, searchable book for students including all information from class</li>
+<li>One extra step on top of Quarto slides!</li>
+</ul>
+</section>
+</section>
+<section id="introduction-to-quarto" class="level2" data-number="C.2">
+<h2 data-number="C.2" class="anchored" data-anchor-id="introduction-to-quarto"><span class="header-section-number">C.2</span> Introduction to Quarto</h2>
+<section id="qmd-versus-rmd" class="level3">
+<h3 class="anchored" data-anchor-id="qmd-versus-rmd"><code>qmd</code> versus <code>Rmd</code></h3>
+<p>If you rename <code>myfile.Rmd</code> to <code>myfile.qmd</code>, it works exactly the same.</p>
+<p><code>qmd</code> is the next generation of RMarkdown.</p>
+<ul>
+<li>More code options</li>
+<li>More output options</li>
+<li>More language options (python, julia, lua, etc.)</li>
+<li>More editor options</li>
+</ul>
+</section>
+<section id="the-general-quarto-idea" class="level3">
+<h3 class="anchored" data-anchor-id="the-general-quarto-idea">The General Quarto Idea</h3>
+<p>One input file, many outputs.</p>
+<p>Quarto accepts <code>.qmd</code>, <code>.Rmd</code>, and <code>.ipynb</code> as input files!</p>
+</section>
+</section>
+<section id="setup-steps" class="level2" data-number="C.3">
+<h2 data-number="C.3" class="anchored" data-anchor-id="setup-steps"><span class="header-section-number">C.3</span> Setup Steps</h2>
+<section id="the-yaml-files" class="level3">
+<h3 class="anchored" data-anchor-id="the-yaml-files">The YAML files</h3>
+<ul>
+<li>slides</li>
+<li>book
+<ul>
+<li>most of the magic is here</li>
+</ul></li>
+</ul>
+</section>
+<section id="github-pages" class="level3">
+<h3 class="anchored" data-anchor-id="github-pages">GitHub Pages</h3>
+<ul>
+<li>Under Settings -&gt; Pages, set output directory to <code>/docs</code>.
+<ul>
+<li>Tell quarto to render to docs</li>
+<li>Commit!</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="authoring" class="level2" data-number="C.4">
+<h2 data-number="C.4" class="anchored" data-anchor-id="authoring"><span class="header-section-number">C.4</span> Authoring</h2>
+<section id="conditional-rendering" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-rendering">Conditional Rendering</h3>
+</section>
+<section id="previewing" class="level3">
+<h3 class="anchored" data-anchor-id="previewing">Previewing</h3>
 
 
 </section>
@@ -639,11 +696,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./Lab02-Python.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Python Lab 1</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./L01.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setup Justification</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

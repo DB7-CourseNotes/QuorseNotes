@@ -89,5 +89,33 @@
     "title": "Appendix B — Python Lab 1",
     "section": "",
     "text": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\n\n\nx = np.random.uniform(0, 10, 50)\ne = np.random.normal(0, 3, x.size)\ny = 12 - 5 * x + e\n\nplt.scatter(x, y)\nplt.show()"
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#introduction",
+    "href": "DGBecker_QuorseNotes.html#introduction",
+    "title": "Appendix C — Quorse Notes",
+    "section": "C.1 Introduction",
+    "text": "C.1 Introduction\n\nOverview\n\nThese are slides… or are they?\n\nIf you’re reading this, the answer is no! This is a portion that is only visible when compiled as a book!\n\n\nWorkflow Preview\nOnce everything is set up:\n\nMake slides (or adapt from elsewhere)\nAdd in participation activities\nDo some live demonstrations in class\nPush to GitHub after class\n\nEverything is now available to the students\n\n\n\n\nMain Benefits\n\nOpen source and reproducible\nEasy to use, searchable book for students including all information from class\nOne extra step on top of Quarto slides!"
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#introduction-to-quarto",
+    "href": "DGBecker_QuorseNotes.html#introduction-to-quarto",
+    "title": "Appendix C — Quorse Notes",
+    "section": "C.2 Introduction to Quarto",
+    "text": "C.2 Introduction to Quarto\n\nqmd versus Rmd\nIf you rename myfile.Rmd to myfile.qmd, it works exactly the same.\nqmd is the next generation of RMarkdown.\n\nMore code options\nMore output options\nMore language options (python, julia, lua, etc.)\nMore editor options\n\n\n\nThe General Quarto Idea\nOne input file, many outputs.\nQuarto accepts .qmd, .Rmd, and .ipynb as input files!"
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#setup-steps",
+    "href": "DGBecker_QuorseNotes.html#setup-steps",
+    "title": "Appendix C — Quorse Notes",
+    "section": "C.3 Setup Steps",
+    "text": "C.3 Setup Steps\n\nThe YAML files\n\nslides\nbook\n\nmost of the magic is here\n\n\n\n\nGitHub Pages\n\nUnder Settings -&gt; Pages, set output directory to /docs.\n\nTell quarto to render to docs\nCommit!"
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#authoring",
+    "href": "DGBecker_QuorseNotes.html#authoring",
+    "title": "Appendix C — Quorse Notes",
+    "section": "C.4 Authoring",
+    "text": "C.4 Authoring\n\nConditional Rendering\n\n\nPreviewing"
   }
 ]

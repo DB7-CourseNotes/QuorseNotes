@@ -28,6 +28,7 @@ book:
   appendices:
     - Lab01-R.Rmd
     - Lab02-Python.ipynb
+    - DGBecker_QuorseNotes.qmd
 
 format:
   html:
