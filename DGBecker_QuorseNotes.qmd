@@ -56,5 +56,29 @@ One input file, many outputs.
 
 \pspace
 
+Quarto accepts `.qmd`, `.Rmd`, and `.ipynb` as input files!
+
+## Setup Steps
+
+### The YAML files
+
+- slides\lspace
+- book
+    - most of the magic is here
+
+### GitHub Pages
+
+- Under Settings -> Pages, set output directory to `/docs`. 
+    - Tell quarto to render to docs
+    - Commit!
+
+## Authoring
+
+### Conditional Rendering
+
+### Previewing
+
+
+
 
 
