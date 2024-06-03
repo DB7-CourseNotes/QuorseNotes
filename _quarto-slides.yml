@@ -1,3 +1,5 @@
+project:
+  output-dir: Slides
 
 format: 
   beamer:
