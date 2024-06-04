@@ -1,6 +1,7 @@
 ---
 title: "Quorse Notes"
 subtitle: "Building a Book from Slides"
+code-block-border-left: true
 ---
 
 ## Introduction
@@ -9,7 +10,7 @@ subtitle: "Building a Book from Slides"
 
 - These are slides... or are they?
 
-::: {.content-visible unless-profile="book"}
+::: {.content-visible when-profile="slides"}
 If you're reading this, then yes they are!!!
 :::
 
@@ -27,13 +28,13 @@ Once everything is set up:
 - Add in participation activities\lspace
 - Do some live demonstrations in class\lspace
 - Push to GitHub after class
-    - Everything is now available to the students
+    - Everything is now available to the students on a website
 
 ### Main Benefits
 
 - Open source and reproducible\lspace
 - Easy to use, searchable book for students including all information from class\lspace
-- One extra step on top of Quarto slides!
+- Only one extra step on top of Quarto slides!
 
 ## Introduction to Quarto
 
@@ -56,29 +57,198 @@ One input file, many outputs.
 
 \pspace
 
-Quarto accepts `.qmd`, `.Rmd`, and `.ipynb` as input files!
+- Accepts `qmd`, `Rmd`, and `ipynb` as input files
+- Outputs to `pdf`, `html`, `docx`, `pptx`, `md`, `epub`, `odt`, etc.
+
+### Code and Prose
+
+This is text. The following is R code.
+
+```{r}
+#| echo: fenced
+#| eval: false
+print("This is R code, but it won't be executed,")
+```
+
+Here's some more text.
+
+```{r}
+#| echo: fenced
+#| eval: true
+print("This is R code, and it will be executed,")
+```
+
+### Math, too!
+
+Basic \LaTeX math works in all output formats:
+
+:::: {.columns}
+::: {.column width="50%"}
+```txt
+\begin{align}
+ma^{th} = f(un)
+\end{align}
+```
+
+:::
+::: {.column width="50%"}
+\begin{align}
+ma^{th} = f(un)
+\end{align}
+:::
+::::
+
+### So Much More!
+
+- Code line numbering, with line highlight.\lspace
+- Interactive elements (shiny, runnable code, ).\lspace
+- Non-linear slideshows.\lspace
+- [So much more!](https://quarto.org/docs/presentations/revealjs/demo/)
+
 
 ## Setup Steps
 
 ### The YAML files
 
-- slides\lspace
-- book
-    - most of the magic is here
+**YAML**: Yet Another Markup Language
 
-### GitHub Pages
+- Basically, human-readable files that tell a computer what to do. 
+- You've seen this syntax if you've used RMarkdown!
 
-- Under Settings -> Pages, set output directory to `/docs`. 
-    - Tell quarto to render to docs
-    - Commit!
+\pspace
+
+```yaml
+author: "Dr. Devan Becker"
+date: "last-modified"
+date-format: "iso"
+
+execute:
+    warning: false
+    cache: true
+```
+
+
+### YAML Separation
+
+
+:::: {.columns}
+::: {.column width="33%"}
+`_quarto.yml`
+
+```yml
+date-fromat: iso
+...
+
+execute:
+  warning: false
+  ...
+
+profile:
+  group:
+  - [slides, book]
+```
+:::
+::: {.column width="33%"}
+`_quarto-slides.yml`
+```yml
+project:
+  output-dir: Slides
+
+format: 
+  beamer:
+    ...
+    execute:
+      echo: false
+      ...
+```
+:::
+::: {.column width="33%"}
+`_quarto-slides.yml`
+
+```yml
+project:
+  type: book
+  output-dir: docs
+book:
+  title: "Quarto Course Notes"
+  ...
+  chapters:
+    - index.qmd
+    ...
+
+format:
+  html:
+    ...
+```
+:::
+::::
+
+::: {.content-visible when-profile="book"}
+- The `_quarto.yml` file includes options that apply to *everything*.
+    - The profile group indicates that slides are the default.
+- The other two have specific options for slides and book, respectively.
+:::
+
+### Special Things in `quarto-book.yml`
+
+- Links to the github repo.\lspace
+- Page headers and footers.\lspace
+- Navigation options.\lspace
+- Chapters (separated into parts) and appendices.\lspace
+- Themes/appearance\lspace
+
+
+### GitHub Pages Workflow
+
+- In `_quarto-slides.yml`, send the outputs whereever
+    - I have a folder called "Slides", so I use `project: output-dir: Slides`
+- In `quarto-book.yml`, send the outputs to a folder called "`docs`"
+    - It must be called `docs` for this to work.
+- On GitHub, go to Settings -> Pages
+    - Choose "Deploy from a branch"
+    - Choose "main" and "docs"
+
+Anytime you push to the repo, the `html` files made by quarto are built into a website!
+
+### Alternative Workflows
+
+- Github pages, but use a different branch
+    - Adds some complexity, but allows the source files to be private.\lspace
+- Any static site host
+    - Set `output-dir` to any folder that gets pushed to the website.
+    - Useful if you already have a web host set up.
 
 ## Authoring
 
+### Some Conveniences
+
+- Custom beamer definitions for spacing in slides
+    - `\lspace` (list space) is a newline in slides, nothing in book.
+    - `\pspace` (paragraph space) is a whitespace character in slides, nothing in book\lspace
+- Snippets in RStudio
+    - `book-only` and `not-book`, but also LaTeX symbols
+
 ### Conditional Rendering
+
+- These are slides... or are they?
+
+```
+::: {.content-visible when-profile="slides"}
+If you're reading this, then yes they are!!!
+:::
+
+::: {.content-visible when-profile="book"}
+If you're reading this, the answer is no! This is a portion that is only
+visible when compiled as a book!
+:::
+```
+
+RStudio snippets make these really easy!
 
 ### Previewing
 
+With the given setup, `Cmd` + `Shift` + `K` will build the *slides* (not book).
 
+\pspace
 
-
-
+To see the book, need to put `quarto preview --profile book` in the terminal. (Sorry, you'll need the terminal for this - for now!)
