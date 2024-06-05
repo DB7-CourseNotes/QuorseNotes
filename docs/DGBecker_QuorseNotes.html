@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-05-01">
+<meta name="dcterms.date" content="2024-06-04">
 
-<title>Quarto Course Notes - Appendix C — Quorse Notes</title>
+<title>Quarto Course Notes - Appendix C — Quorse Notes Presentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -64,6 +98,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -76,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -181,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -206,14 +242,21 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#qmd-versus-rmd" id="toc-qmd-versus-rmd" class="nav-link" data-scroll-target="#qmd-versus-rmd"><code>qmd</code> versus <code>Rmd</code></a></li>
   <li><a href="#the-general-quarto-idea" id="toc-the-general-quarto-idea" class="nav-link" data-scroll-target="#the-general-quarto-idea">The General Quarto Idea</a></li>
+  <li><a href="#code-and-prose" id="toc-code-and-prose" class="nav-link" data-scroll-target="#code-and-prose">Code and Prose</a></li>
+  <li><a href="#math-too" id="toc-math-too" class="nav-link" data-scroll-target="#math-too">Math, too!</a></li>
+  <li><a href="#so-much-more" id="toc-so-much-more" class="nav-link" data-scroll-target="#so-much-more">So Much More!</a></li>
   </ul></li>
   <li><a href="#setup-steps" id="toc-setup-steps" class="nav-link" data-scroll-target="#setup-steps"><span class="header-section-number">C.3</span> Setup Steps</a>
   <ul class="collapse">
   <li><a href="#the-yaml-files" id="toc-the-yaml-files" class="nav-link" data-scroll-target="#the-yaml-files">The YAML files</a></li>
-  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a></li>
+  <li><a href="#yaml-separation" id="toc-yaml-separation" class="nav-link" data-scroll-target="#yaml-separation">YAML Separation</a></li>
+  <li><a href="#special-things-in-quarto-book.yml" id="toc-special-things-in-quarto-book.yml" class="nav-link" data-scroll-target="#special-things-in-quarto-book.yml">Special Things in <code>quarto-book.yml</code></a></li>
+  <li><a href="#github-pages-workflow" id="toc-github-pages-workflow" class="nav-link" data-scroll-target="#github-pages-workflow">GitHub Pages Workflow</a></li>
+  <li><a href="#alternative-workflows" id="toc-alternative-workflows" class="nav-link" data-scroll-target="#alternative-workflows">Alternative Workflows</a></li>
   </ul></li>
   <li><a href="#authoring" id="toc-authoring" class="nav-link" data-scroll-target="#authoring"><span class="header-section-number">C.4</span> Authoring</a>
   <ul class="collapse">
+  <li><a href="#some-conveniences" id="toc-some-conveniences" class="nav-link" data-scroll-target="#some-conveniences">Some Conveniences</a></li>
   <li><a href="#conditional-rendering" id="toc-conditional-rendering" class="nav-link" data-scroll-target="#conditional-rendering">Conditional Rendering</a></li>
   <li><a href="#previewing" id="toc-previewing" class="nav-link" data-scroll-target="#previewing">Previewing</a></li>
   </ul></li>
@@ -225,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appendix C — Quorse Notes</h1>
+<h1 class="title">Appendix C — Quorse Notes Presentation</h1>
 <p class="subtitle lead">Building a Book from Slides</p>
 </div>
 
@@ -250,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2024</p>
+      <p class="date">June 4, 2024</p>
     </div>
   </div>
   
@@ -278,7 +321,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Do some live demonstrations in class</li>
 <li>Push to GitHub after class
 <ul>
-<li>Everything is now available to the students</li>
+<li>Everything is now available to the students on a website</li>
 </ul></li>
 </ul>
 </section>
@@ -287,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Open source and reproducible</li>
 <li>Easy to use, searchable book for students including all information from class</li>
-<li>One extra step on top of Quarto slides!</li>
+<li>Only one extra step on top of Quarto slides!</li>
 </ul>
 </section>
 </section>
@@ -307,39 +350,206 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-general-quarto-idea" class="level3">
 <h3 class="anchored" data-anchor-id="the-general-quarto-idea">The General Quarto Idea</h3>
 <p>One input file, many outputs.</p>
-<p>Quarto accepts <code>.qmd</code>, <code>.Rmd</code>, and <code>.ipynb</code> as input files!</p>
+<ul>
+<li>Accepts <code>qmd</code>, <code>Rmd</code>, and <code>ipynb</code> as input files</li>
+<li>Outputs to <code>pdf</code>, <code>html</code>, <code>docx</code>, <code>pptx</code>, <code>md</code>, <code>epub</code>, <code>odt</code>, etc.</li>
+</ul>
+</section>
+<section id="code-and-prose" class="level3">
+<h3 class="anchored" data-anchor-id="code-and-prose">Code and Prose</h3>
+<p>This is text. The following is R code.</p>
+<div class="cell" data-hash="DGBecker_QuorseNotes_cache/html/unnamed-chunk-1_d6905a55d29c965edd9f82b5f4428ff2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"This is R code, but it won't be executed,"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here’s some more text.</p>
+<div class="cell" data-hash="DGBecker_QuorseNotes_cache/html/unnamed-chunk-2_74a077f4dc58f75ba710057bb7e5272f">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"This is R code, and it will be executed,"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "This is R code, and it will be executed,"</code></pre>
+</div>
+</div>
+</section>
+<section id="math-too" class="level3">
+<h3 class="anchored" data-anchor-id="math-too">Math, too!</h3>
+<p>Basic math works in all output formats:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ma^{th} = f(un)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>\end{align}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<p><span class="math display">\[\begin{align}
+ma^{th} = f(un)
+\end{align}\]</span></p>
+</div>
+</div>
+</section>
+<section id="so-much-more" class="level3">
+<h3 class="anchored" data-anchor-id="so-much-more">So Much More!</h3>
+<ul>
+<li>Code line numbering, with line highlight.</li>
+<li>Interactive elements (shiny, runnable code, ).</li>
+<li>Non-linear slideshows.</li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/demo/">So much more!</a></li>
+</ul>
 </section>
 </section>
 <section id="setup-steps" class="level2" data-number="C.3">
 <h2 data-number="C.3" class="anchored" data-anchor-id="setup-steps"><span class="header-section-number">C.3</span> Setup Steps</h2>
 <section id="the-yaml-files" class="level3">
 <h3 class="anchored" data-anchor-id="the-yaml-files">The YAML files</h3>
+<p><strong>YAML</strong>: Yet Another Markup Language</p>
 <ul>
-<li>slides</li>
-<li>book
+<li>Basically, human-readable files that tell a computer what to do.</li>
+<li>You’ve seen this syntax if you’ve used RMarkdown!</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Dr. Devan Becker"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"last-modified"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> </span><span class="st">"iso"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cache</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="yaml-separation" class="level3">
+<h3 class="anchored" data-anchor-id="yaml-separation">YAML Separation</h3>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><code>_quarto.yml</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date-fromat</span><span class="kw">:</span><span class="at"> iso</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">...</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">execute:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">  ...</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">profile:</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">  group:</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - [slides, book]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:33%;">
+<p><code>_quarto-slides.yml</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> Slides</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    ...</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">      ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:33%;">
+<p><code>_quarto-slides.yml</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">book</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto Course Notes"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">  ...</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">    ...</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="at">    ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <ul>
-<li>most of the magic is here</li>
+<li>The <code>_quarto.yml</code> file includes options that apply to <em>everything</em>.
+<ul>
+<li>The profile group indicates that slides are the default.</li>
 </ul></li>
+<li>The other two have specific options for slides and book, respectively.</li>
 </ul>
 </section>
-<section id="github-pages" class="level3">
-<h3 class="anchored" data-anchor-id="github-pages">GitHub Pages</h3>
+<section id="special-things-in-quarto-book.yml" class="level3">
+<h3 class="anchored" data-anchor-id="special-things-in-quarto-book.yml">Special Things in <code>quarto-book.yml</code></h3>
 <ul>
-<li>Under Settings -&gt; Pages, set output directory to <code>/docs</code>.
+<li>Links to the github repo.</li>
+<li>Page headers and footers.</li>
+<li>Navigation options.</li>
+<li>Chapters (separated into parts) and appendices.</li>
+<li>Themes/appearance</li>
+</ul>
+</section>
+<section id="github-pages-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="github-pages-workflow">GitHub Pages Workflow</h3>
 <ul>
-<li>Tell quarto to render to docs</li>
-<li>Commit!</li>
+<li>In <code>_quarto-slides.yml</code>, send the outputs whereever
+<ul>
+<li>I have a folder called “Slides”, so I use <code>project: output-dir: Slides</code></li>
+</ul></li>
+<li>In <code>quarto-book.yml</code>, send the outputs to a folder called “<code>docs</code>”
+<ul>
+<li>It must be called <code>docs</code> for this to work.</li>
+</ul></li>
+<li>On GitHub, go to Settings -&gt; Pages
+<ul>
+<li>Choose “Deploy from a branch”</li>
+<li>Choose “main” and “docs”</li>
+</ul></li>
+</ul>
+<p>Anytime you push to the repo, the <code>html</code> files made by quarto are built into a website!</p>
+<ul>
+<li>Must “build” the <code>html</code> files locally.</li>
+</ul>
+</section>
+<section id="alternative-workflows" class="level3">
+<h3 class="anchored" data-anchor-id="alternative-workflows">Alternative Workflows</h3>
+<ul>
+<li>Github pages, but use a different branch
+<ul>
+<li>Adds some complexity, but allows the source files to be private.</li>
+</ul></li>
+<li>Any static site host
+<ul>
+<li>Set <code>output-dir</code> to any folder that gets pushed to the website.</li>
+<li>Useful if you already have a web host set up.</li>
 </ul></li>
 </ul>
 </section>
 </section>
 <section id="authoring" class="level2" data-number="C.4">
 <h2 data-number="C.4" class="anchored" data-anchor-id="authoring"><span class="header-section-number">C.4</span> Authoring</h2>
+<section id="some-conveniences" class="level3">
+<h3 class="anchored" data-anchor-id="some-conveniences">Some Conveniences</h3>
+<ul>
+<li>Custom beamer definitions for spacing in slides
+<ul>
+<li><code>\lspace</code> (list space) is a newline in slides, nothing in book.</li>
+<li><code>\pspace</code> (paragraph space) is a whitespace character in slides, nothing in book</li>
+</ul></li>
+<li>Snippets in RStudio
+<ul>
+<li><code>book-only</code> and <code>not-book</code>, but also LaTeX symbols</li>
+</ul></li>
+</ul>
+</section>
 <section id="conditional-rendering" class="level3">
 <h3 class="anchored" data-anchor-id="conditional-rendering">Conditional Rendering</h3>
+<ul>
+<li>These are slides… or are they?</li>
+</ul>
+<pre><code>::: {.content-visible when-profile="slides"}
+If you're reading this, then yes they are!!!
+:::
+
+::: {.content-visible when-profile="book"}
+If you're reading this, the answer is no! This is a portion that is only
+visible when compiled as a book!
+:::</code></pre>
+<p>RStudio snippets make these really easy!</p>
 </section>
 <section id="previewing" class="level3">
 <h3 class="anchored" data-anchor-id="previewing">Previewing</h3>
+<p>With the given setup, <code>Cmd</code> + <code>Shift</code> + <code>K</code> will build the <em>slides</em> (not book).</p>
+<p>To see the book, need to put <code>quarto preview --profile book</code> in the terminal. (Sorry, you’ll need the terminal for this - for now!)</p>
 
 
 </section>
