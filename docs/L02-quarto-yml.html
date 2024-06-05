@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-04-22">
+<meta name="dcterms.date" content="2024-06-04">
 
 <title>Quarto Course Notes - 2&nbsp; The _quarto.yml file</title>
 <style>
@@ -99,8 +99,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -188,8 +186,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./L04-quarto-slides-yml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The <code>_quarto-slides.yml</code> file</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./L05-advanced.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Some advanced things</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Some advanced things</span></span></a>
   </div>
 </li>
       </ul>
@@ -218,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -260,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 22, 2024</p>
+      <p class="date">June 4, 2024</p>
     </div>
   </div>
   
@@ -271,19 +275,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>Let’s go through the file line-by-line.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> Slides</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date-fromat</span><span class="kw">:</span><span class="at"> iso</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"last-modified"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Dr. Devan Becker"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">institute</span><span class="kw">:</span><span class="at"> </span><span class="st">"Wilfrid Laurier University"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date-fromat</span><span class="kw">:</span><span class="at"> iso</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"last-modified"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Dr. Devan Becker"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">institute</span><span class="kw">:</span><span class="at"> </span><span class="st">"Wilfrid Laurier University"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><code>project:</code> defines the project-wide options.
+<li><code>date-format</code> to <code>institute</code> are self-explanatory.
 <ul>
-<li><code>output-dir: Slides</code> puts the output pdfs when <strong>not</strong> rendering a book into the <code>Slides/</code> folder.</li>
+<li>See <a href="https://quarto.org/docs/reference/dates.html">date formats</a> for more advanced things</li>
 </ul></li>
-<li><code>date-format</code> to <code>institute</code> are self-explanatory.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
@@ -292,32 +292,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The <code>execute</code> options will apply to everything (I think - doesn’t work for all options).</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> Madrid</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">colortheme</span><span class="kw">:</span><span class="at"> PrimaryBullets</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">aspectratio</span><span class="kw">:</span><span class="at"> </span><span class="dv">169</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span><span class="st">"defs_beamer.tex"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">7</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">fig-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">3.5</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">code-line-numbers</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">profile</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">default</span><span class="kw">:</span><span class="at"> slides</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">group</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="kw">[</span><span class="at">slides</span><span class="kw">,</span><span class="at"> book</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is where a lot of the magic happens! The profiles allow for easy switching between output formats, each of which has their own option.</p>
 <ul>
-<li><code>format</code> defines the format, but only when the profile is <strong>not</strong> set to <code>book</code>.
+<li>The default profile being “slides” means that <code>Ctrl+Shift+K</code> will preview to slides!
 <ul>
-<li><code>beamer</code> produces pdf slides, using the <span class="math inline">\(\LaTeX\)</span> <code>beamer</code> class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.
-<ul>
-<li><code>theme: Madrid</code> is specific to the beamer class.</li>
-<li><code>colortheme: PrimaryBullets</code> uses my custom beamer colortheme (which also affects the theme. this is bad programming on my part, but it looks nice). If you use this, you should change the name, institution, and email in the definition!</li>
-<li><code>aspectratio</code> and <code>toc</code> (table of contents), are beamer specific settings.</li>
-<li><code>include-in-header</code> uses a custom <span class="math inline">\(\LaTeX\)</span> definition file for spacing in books versus slides. See below.</li>
-<li><code>execute</code> makes figures the right size for 16x9 slides. It also makes <code>echo</code> false by default (the book uses <code>true</code> by default).</li>
-</ul></li>
+<li>You can change this depending on what you’re developing.</li>
 </ul></li>
 </ul>
-<p>For <code>include-in-header: defs_beamer.tex</code>, I use two special commands to make sure that I can control spacing in the slides and the book separately. In slides, I want to add spacing between lists. The <code>\lspace</code> command is defined as <code>\newline</code> if the file is executed without <code>profile --book</code>, and it’s defined as nothing if the profile is set to <code>book</code>. Similarly, <code>\pspace</code> adds a space between paragraphs if the book is rendering to slides and does nothing for the book.</p>
 
 
 
