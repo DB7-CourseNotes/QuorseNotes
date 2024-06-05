@@ -12,6 +12,9 @@ project:
 number-depth: 2
 ```
 
+- The `type` defines the book, and we pass further options in the next bit.
+- `output-dir: docs` is important!
+- `number-depth` just says we'll use chapters like 3.2, rather than just having chapter 3 with a bunch of un-numbered sub-headings.
 
 
 ```yml
@@ -22,6 +25,8 @@ book:
   repo-actions: [issue, source]  
 ```
 
+The above chunk defines the titles and the location of the book. By providing the repo url, you give readers an easy way to find the source code (I hide this from my students, but acknowledge that they might find it one day).
+
 ```yml
   page-footer:
     left: |
@@ -30,6 +35,8 @@ book:
     collapse-level: 2
   page-navigation: true
 ```
+
+- `collapse-level` is useful when "parts" are defined. It helps keep the sidebar a little cleaner by collapsing parts.
 
 ```yml
   chapters:
@@ -41,10 +48,17 @@ book:
       chapters:
         - L02-quarto-yml.qmd
         - L03-quarto-book-yml.qmd
+        - L04-quarto-slides-yml.qmd
+        - L05-advanced.qmd
   appendices:
-    - Lab01.qmd
+    - Lab01-R.Rmd
+    - Lab02-Python.ipynb
+    - DGBecker_QuorseNotes.qmd
 ```
 
+In the chunk above, we tell the book exactly what to include and where. These are the exact file names, and if you rename a file you must rename it here as well.
+
+I have it split into parts and an appendix. Note that I also have an `index.qmd` file that's not in any chapter. 
 
 ```yml
 format:
@@ -57,3 +71,5 @@ format:
       echo: true
       code-fold: true
 ```
+
+In this chunk, I defined the appearance, font, and some execution options. Code folding allows students to just look at the output, but dig into the code as necessary (it can be turned off for individual code chunks).

@@ -1,8 +1,39 @@
 # Some advanced things
 
+## webR
+
+Instructions from this [presentation](https://nrennie.rbind.io/teaching-with-webR).
+
+Install the [webR Quarto extension](https://github.com/coatless/quarto-webr):
+
+```sh
+quarto add coatless/quarto-webr
+```
+
+Add the webR filter to the yaml:
+
+```yaml
+format: revealjs
+filters:
+  - webr
+```
+
+Add a webR code block:
+
+````md
+```{webr-r}
+# set a random seed and generate data
+set.seed(123)
+x <- rnorm(100)
+
+# calculate mean
+mean(x)
+```
+````
+
 ## ShinyLive
 
-[Shiny Live](https://topepo.github.io/shinylive-in-book-test/) allows shiny apps to be run from within the book - without storing the book on a shiny server!
+[Shiny Live](https://topepo.github.io/shinylive-in-book-test/) allows either R or Python shiny apps to be run from within the book - without storing the book on a shiny server! See [here](https://github.com/RamiKrispin/shinylive-r) for a tutorial.
 
 Every time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.
 

@@ -253,4 +253,8 @@ With the given setup, `Cmd` + `Shift` + `K` will build the *slides* (not book).
 
 \pspace
 
-To see the book, need to put `quarto preview --profile book` in the terminal. (Sorry, you'll need the terminal for this - for now!)
+To see the book you can: 
+
+- run `quarto preview --profile book` in the terminal
+- Change the default profile briefly, then change it back.
+- Let Quarto do its auto-updating thing!

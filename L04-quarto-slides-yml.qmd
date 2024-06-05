@@ -1,0 +1,36 @@
+---
+title: "The `_quarto-slides.yml` file"
+---
+
+```yml
+project:
+  output-dir: Slides
+```
+
+- Send the slides to the "Slides" directory. 
+
+```yml
+format: 
+  beamer:
+    theme: Madrid
+    colortheme: PrimaryBullets
+    aspectratio: 169
+    toc: false
+    include-in-header: "defs_beamer.tex"
+    execute:
+      echo: false
+      fig-width: 7
+      fig-height: 3.5
+      code-line-numbers: false
+```
+
+- `format` defines the format, but only when the profile is **not** set to `book`.
+    - `beamer` produces pdf slides, using the $\LaTeX$ `beamer` class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.
+        - `theme: Madrid` is specific to the beamer class.
+        - `colortheme: PrimaryBullets` uses my custom beamer colortheme (which also affects the theme. this is bad programming on my part, but it looks nice). If you use this, you should change the name, institution, and email in the definition!
+        - `aspectratio` and `toc` (table of contents), are beamer specific settings.
+        - `include-in-header` uses a custom $\LaTeX$ definition file for spacing in books versus slides. See below.
+        - `execute` makes figures the right size for 16x9 slides. It also makes `echo` false by default (the book uses `true` by default).
+
+For `include-in-header: defs_beamer.tex`, I use two special commands to make sure that I can control spacing in the slides and the book separately. In slides, I want to add spacing between lists. The `\lspace` command is defined as `\newline` if the file is executed without `profile --book`, and it's defined as nothing if the profile is set to `book`. Similarly, `\pspace` adds a space between paragraphs if the book is rendering to slides and does nothing for the book.
+
