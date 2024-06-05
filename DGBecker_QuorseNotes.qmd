@@ -1,5 +1,5 @@
 ---
-title: "Quorse Notes"
+title: "Quorse Notes Presentation"
 subtitle: "Building a Book from Slides"
 code-block-border-left: true
 ---
@@ -209,6 +209,8 @@ format:
     - Choose "main" and "docs"
 
 Anytime you push to the repo, the `html` files made by quarto are built into a website!
+
+- Must "build" the `html` files locally.
 
 ### Alternative Workflows
 
