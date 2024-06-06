@@ -1,0 +1,53 @@
+---
+title: "Authoring Workflow"
+---
+
+# The Forward Workflow
+
+Once you've got this all set up, how do you actually do it???
+
+## Make Slides!
+
+- Start as if you're preparing lecture slides.
+    - Preview the slides as you go.\lspace
+- You must learn to let go and accept the Quarto syntax
+    - It's probably easier than the syntax you're used to.
+    - For new syntax that you can't get your head around, make snippets.
+        - I can't do anything without my `columns` snippet.
+
+## Add lecture notes
+
+In a `when-profile="book"` chunk, add what your lecture notes would be. The students will have these online in a nice, searchable format!
+
+You can also add some exercises (and solutions) in the 
+
+## Build the book and commit
+
+Github will take care of the rest for you!
+
+# The Reverse Workflow
+
+What if you're starting from course notes, and want to make slides?
+
+Example: The OpenIntro textbooks make their $\LaTeX$ code available. I've converted a handful of chapters to Quarto (the rest in progress as I go).
+
+## Turn the text into "speaker notes"
+
+- Keep images and diagrams.
+    - Possibly move them around.
+- Use bullet points to summarise the text.
+- Add a lot more subheadings!
+    - Also helps separate the text into more manageable chunks.
+
+If done well, the bullet points seem natural around the text. 
+
+You may 
+
+# Other Tips
+
+- Label your code chunks!
+    - Debugging is way easier!
+    - `#| label: code-that-does-this`
+- Use snippets!
+    - Easy in RStudio and VSCode.
+    - If you forget thrice, automate!
