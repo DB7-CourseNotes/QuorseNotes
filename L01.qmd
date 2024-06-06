@@ -36,12 +36,12 @@ Content here will only be visible when **not** rendered using --profile book
 :::
 ```
 
-Notice that both of these are defined in `.vscode/quarto-bookslides.code-snippets`, and thus can be easily inserted when editing with VSCode (I'm not sure of an equivalent workflow in RStudio, but I'm sure it exists).
+Notice that both of these are defined in `.vscode/quarto-bookslides.code-snippets`, and thus can be easily inserted when editing with VSCode (a similar setup exists in RStudio, with different syntax).
 
 
 ## Publishing on GitHub
 
-The `_quarto-book.yml` file puts the book in the "docs" folder, and GitHub allows you to serve a static site from the `docs/` folder. The `output-dir: docs` in `_quarto-book.yml` is required!
+The `_quarto-book.yml` file puts the book in the "docs" folder, and GitHub allows you to serve a static site (i.e., host a webpage) from the `docs/` folder. The `output-dir: docs` in `_quarto-book.yml` is required!
 
 On GitHub, go to Settings -> Pages and tell it to serve the site from `docs/`. 
 

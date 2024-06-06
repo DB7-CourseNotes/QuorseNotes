@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-06-04">
+<meta name="dcterms.date" content="2024-06-06">
 
 <title>Quarto Course Notes – 5&nbsp; Some advanced things</title>
 <style>
@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Overview Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#shinylive" id="toc-shinylive" class="nav-link" data-scroll-target="#shinylive"><span class="header-section-number">5.2</span> ShinyLive</a></li>
   <li><a href="#quizzes-for-your-lms" id="toc-quizzes-for-your-lms" class="nav-link" data-scroll-target="#quizzes-for-your-lms"><span class="header-section-number">5.3</span> Quizzes for your LMS</a></li>
   <li><a href="#partially-populated-slides-with-full-notes" id="toc-partially-populated-slides-with-full-notes" class="nav-link" data-scroll-target="#partially-populated-slides-with-full-notes"><span class="header-section-number">5.4</span> Partially Populated Slides with Full Notes</a></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">5.5</span> Solutions</a></li>
+  <li><a href="#solutions-html-only" id="toc-solutions-html-only" class="nav-link" data-scroll-target="#solutions-html-only"><span class="header-section-number">5.5</span> Solutions (html only)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/L05-advanced.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -282,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 4, 2024</p>
+      <p class="date">June 6, 2024</p>
     </div>
   </div>
   
@@ -336,14 +336,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="partially-populated-slides-with-full-notes" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="partially-populated-slides-with-full-notes"><span class="header-section-number">5.4</span> Partially Populated Slides with Full Notes</h2>
-<div class="cell" data-hash="L05-advanced_cache/html/unnamed-chunk-1_cc3fbf8bbe7ed079167475658d3b1185">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_PROFILE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "book"</code></pre>
 </div>
 </div>
 <p>Using the profile in R:</p>
-<div class="cell" data-hash="L05-advanced_cache/html/unnamed-chunk-2_bd39fe03f625e0168fda999d44009507">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>blank <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">Sys.getenv</span>(<span class="st">"QUARTO_PROFILE"</span>) <span class="sc">==</span> <span class="st">"book"</span>) {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(x)</span>
@@ -354,8 +354,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Forgetful Sally was so forgetful that when she tried to remember something she drew a blank.</p>
 </section>
-<section id="solutions" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="solutions"><span class="header-section-number">5.5</span> Solutions</h2>
+<section id="solutions-html-only" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="solutions-html-only"><span class="header-section-number">5.5</span> Solutions (html only)</h2>
 <p>How can I get an arbitrary block of text to be hidden until the user asks for it?</p>
 <details>
 <summary>

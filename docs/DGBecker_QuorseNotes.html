@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-06-04">
 
-<title>Quarto Course Notes – Appendix C — Quorse Notes Presentation</title>
+<title>Quarto Course Notes – Appendix C — Quorse Notes Overview Presentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Overview Presentation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -258,7 +257,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Overview Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -301,16 +300,20 @@ window.Quarto = {
   <li><a href="#conditional-rendering" id="toc-conditional-rendering" class="nav-link" data-scroll-target="#conditional-rendering">Conditional Rendering</a></li>
   <li><a href="#previewing" id="toc-previewing" class="nav-link" data-scroll-target="#previewing">Previewing</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">C.5</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#qmd-files" id="toc-qmd-files" class="nav-link" data-scroll-target="#qmd-files"><code>qmd</code> files</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/DB7-CourseNotes/QuorseNotes/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/DB7-CourseNotes/QuorseNotes/blob/main/DGBecker_QuorseNotes.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Lab01-R.html">Appendices</a></li><li class="breadcrumb-item"><a href="./DGBecker_QuorseNotes.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Overview Presentation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix C — Quorse Notes Presentation</h1>
-<p class="subtitle lead">Building a Book from Slides</p>
+<h1 class="title">Appendix C — Quorse Notes Overview Presentation</h1>
+<p class="subtitle lead">During the presentation (optional): Get a free github account, install git or GitHub desktop, and open RStudio or VSCode</p>
 </div>
 
 
@@ -334,7 +337,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 4, 2024</p>
+      <p class="date">eCOTS Workshop June 07, 2024</p>
     </div>
   </div>
   
@@ -354,6 +357,9 @@ window.Quarto = {
 <li>These are slides… or are they?</li>
 </ul>
 <p>If you’re reading this, the answer is no! This is a portion that is only visible when compiled as a book!</p>
+<!--- \pspace is a special latex command defined in defs_beamer.tex as an empty space to help with slide content, and defined in defs_pdf.tex to do nothing so that the book chapters are not affected. --->
+<p>This <span>book chapter created from a slideshow</span> will introduce the basic workflow and some ideas. (Check the source code for this paragraph).</p>
+<p>It will be helpful to have a GitHub account, GitHub desktop installed, and RStudio/VSCode running.</p>
 </section>
 <section id="workflow-preview" class="level3">
 <h3 class="anchored" data-anchor-id="workflow-preview">Workflow Preview</h3>
@@ -401,14 +407,14 @@ window.Quarto = {
 <section id="code-and-prose" class="level3">
 <h3 class="anchored" data-anchor-id="code-and-prose">Code and Prose</h3>
 <p>This is text. The following is R code.</p>
-<div class="cell" data-hash="DGBecker_QuorseNotes_cache/html/unnamed-chunk-1_d6905a55d29c965edd9f82b5f4428ff2">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">print("This is R code, but it won't be executed,")</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here’s some more text.</p>
-<div class="cell" data-hash="DGBecker_QuorseNotes_cache/html/unnamed-chunk-2_74a077f4dc58f75ba710057bb7e5272f">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: true</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">print("This is R code, and it will be executed,")</span></span>
@@ -423,13 +429,13 @@ window.Quarto = {
 <p>Basic math works in all output formats:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb4"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ma^{th} = f(un)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>\end{align}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[
 ma^{th} = f(un)
-\end{align}\]</span></p>
+\]</span></p>
 </div>
 </div>
 </section>
@@ -487,7 +493,7 @@ ma^{th} = f(un)
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">      ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:33%;">
-<p><code>_quarto-slides.yml</code></p>
+<p><code>_quarto-book.yml</code></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
@@ -592,12 +598,33 @@ visible when compiled as a book!
 <section id="previewing" class="level3">
 <h3 class="anchored" data-anchor-id="previewing">Previewing</h3>
 <p>With the given setup, <code>Cmd</code> + <code>Shift</code> + <code>K</code> will build the <em>slides</em> (not book).</p>
-<p>To see the book you can:</p>
+<p>To see the book you can either:</p>
+<ol type="1">
+<li>Run <code>quarto preview --profile book</code> in the terminal
 <ul>
-<li>run <code>quarto preview --profile book</code> in the terminal</li>
+<li>Quarto will update as you edit!</li>
+</ul></li>
 <li>Change the default profile briefly, then change it back.</li>
-<li>Let Quarto do its auto-updating thing!</li>
+</ol>
+</section>
+</section>
+<section id="summary" class="level2" data-number="C.5">
+<h2 data-number="C.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">C.5</span> Summary</h2>
+<section id="qmd-files" class="level3">
+<h3 class="anchored" data-anchor-id="qmd-files"><code>qmd</code> files</h3>
+<ul>
+<li>Include code, math, pictures, etc.</li>
+<li>Render to slides for class
+<ul>
+<li>Control what’s included</li>
+</ul></li>
+<li>Render to an online book
+<ul>
+<li>Include extra content and capabilities</li>
+<li>Hosted publicly for free!</li>
+</ul></li>
 </ul>
+<p>Write once, publish anyywhere!</p>
 
 
 </section>

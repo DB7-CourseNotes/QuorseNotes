@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-04-23">
+<meta name="dcterms.date" content="2024-06-06">
 
 <title>Quarto Course Notes – 1&nbsp; Setup Justification</title>
 <style>
@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./DGBecker_QuorseNotes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Presentation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Quorse Notes Overview Presentation</span></span></a>
   </div>
 </li>
       </ul>
@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 23, 2024</p>
+      <p class="date">June 6, 2024</p>
     </div>
   </div>
   
@@ -313,11 +313,11 @@ Content here will only be visible when rendered using --profile book
 <pre><code>::: {.content-visible unless-profile="book"}
 Content here will only be visible when **not** rendered using --profile book
 :::</code></pre>
-<p>Notice that both of these are defined in <code>.vscode/quarto-bookslides.code-snippets</code>, and thus can be easily inserted when editing with VSCode (I’m not sure of an equivalent workflow in RStudio, but I’m sure it exists).</p>
+<p>Notice that both of these are defined in <code>.vscode/quarto-bookslides.code-snippets</code>, and thus can be easily inserted when editing with VSCode (a similar setup exists in RStudio, with different syntax).</p>
 </section>
 <section id="publishing-on-github" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="publishing-on-github"><span class="header-section-number">1.4</span> Publishing on GitHub</h2>
-<p>The <code>_quarto-book.yml</code> file puts the book in the “docs” folder, and GitHub allows you to serve a static site from the <code>docs/</code> folder. The <code>output-dir: docs</code> in <code>_quarto-book.yml</code> is required!</p>
+<p>The <code>_quarto-book.yml</code> file puts the book in the “docs” folder, and GitHub allows you to serve a static site (i.e., host a webpage) from the <code>docs/</code> folder. The <code>output-dir: docs</code> in <code>_quarto-book.yml</code> is required!</p>
 <p>On GitHub, go to Settings -&gt; Pages and tell it to serve the site from <code>docs/</code>.</p>
 <p>That’s it! There are no other steps to getting your book as a github website! You’re done!</p>
 

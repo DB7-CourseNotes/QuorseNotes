@@ -21,7 +21,7 @@ execute:
   freeze: auto
 ```
 
-- The `execute` options will apply to everything (I think - doesn't work for all options).
+- The `execute` options will apply to everything.
 
 ```yml
 profile:
