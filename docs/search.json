@@ -131,5 +131,12 @@
     "title": "Appendix C — Quorse Notes Presentation",
     "section": "C.4 Authoring",
     "text": "C.4 Authoring\n\nSome Conveniences\n\nCustom beamer definitions for spacing in slides\n\n\\lspace (list space) is a newline in slides, nothing in book.\n\\pspace (paragraph space) is a whitespace character in slides, nothing in book\n\nSnippets in RStudio\n\nbook-only and not-book, but also LaTeX symbols\n\n\n\n\nConditional Rendering\n\nThese are slides… or are they?\n\n::: {.content-visible when-profile=\"slides\"}\nIf you're reading this, then yes they are!!!\n:::\n\n::: {.content-visible when-profile=\"book\"}\nIf you're reading this, the answer is no! This is a portion that is only\nvisible when compiled as a book!\n:::\nRStudio snippets make these really easy!\n\n\nPreviewing\nWith the given setup, Cmd + Shift + K will build the slides (not book).\nTo see the book you can:\n\nrun quarto preview --profile book in the terminal\nChange the default profile briefly, then change it back.\nLet Quarto do its auto-updating thing!"
+  },
+  {
+    "objectID": "L05-advanced.html#solutions",
+    "href": "L05-advanced.html#solutions",
+    "title": "5  Some advanced things",
+    "section": "5.5 Solutions",
+    "text": "5.5 Solutions\nHow can I get an arbitrary block of text to be hidden until the user asks for it?\n\n\nSolution\n\n&lt;details&gt;\n&lt;summary&gt;**Solution**&lt;/summary&gt;\n\n&lt;/details&gt;"
   }
 ]
