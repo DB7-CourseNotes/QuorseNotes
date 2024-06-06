@@ -1,142 +1,242 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quarto Course Notes",
-    "section": "",
-    "text": "Introduction"
-  },
-  {
-    "objectID": "index.html#this-is-the-quarto-book",
-    "href": "index.html#this-is-the-quarto-book",
-    "title": "Quarto Course Notes",
-    "section": "This is the Quarto Book!",
-    "text": "This is the Quarto Book!\nRendered via:\nquarto render --profile book"
-  },
-  {
-    "objectID": "L01.html#slides-first-mentality",
-    "href": "L01.html#slides-first-mentality",
-    "title": "1  Setup Justification",
-    "section": "1.1 Slides-first mentality",
-    "text": "1.1 Slides-first mentality\n_quarto.yml assumes that the format is going to be beamer slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the _quarto.yml file. This means I prototype my notes as slides, then just kinda assume that the book will look good.\nThe _quarto-book.yml has a special name. The -book part tells quarto that it’s part of the “Book” project."
-  },
-  {
-    "objectID": "L01.html#rendering-the-book",
-    "href": "L01.html#rendering-the-book",
-    "title": "1  Setup Justification",
-    "section": "1.2 Rendering the Book",
-    "text": "1.2 Rendering the Book\nquarto render --profile book\nAlternately,\nquarto preview --profile book"
-  },
-  {
-    "objectID": "L01.html#conditional-render-by-project",
-    "href": "L01.html#conditional-render-by-project",
-    "title": "1  Setup Justification",
-    "section": "1.3 Conditional Render by Project",
-    "text": "1.3 Conditional Render by Project\nThe following allows for different content in the slides versus the book.\n::: {.content-visible when-profile=\"book\"}\nContent here will only be visible when rendered using --profile book\n:::\n::: {.content-visible unless-profile=\"book\"}\nContent here will only be visible when **not** rendered using --profile book\n:::\nNotice that both of these are defined in .vscode/quarto-bookslides.code-snippets, and thus can be easily inserted when editing with VSCode (I’m not sure of an equivalent workflow in RStudio, but I’m sure it exists)."
-  },
-  {
-    "objectID": "L01.html#publishing-on-github",
-    "href": "L01.html#publishing-on-github",
-    "title": "1  Setup Justification",
-    "section": "1.4 Publishing on GitHub",
-    "text": "1.4 Publishing on GitHub\nThe _quarto-book.yml file puts the book in the “docs” folder, and GitHub allows you to serve a static site from the docs/ folder. The output-dir: docs in _quarto-book.yml is required!\nOn GitHub, go to Settings -&gt; Pages and tell it to serve the site from docs/.\nThat’s it! There are no other steps to getting your book as a github website! You’re done!"
-  },
-  {
-    "objectID": "L02-quarto-yml.html",
-    "href": "L02-quarto-yml.html",
-    "title": "2  The _quarto.yml file",
-    "section": "",
-    "text": "Let’s go through the file line-by-line.\ndate-fromat: iso\ndate: \"last-modified\"\nauthor: \"Dr. Devan Becker\"\ninstitute: \"Wilfrid Laurier University\"\n\ndate-format to institute are self-explanatory.\n\nSee date formats for more advanced things\n\n\nexecute:\n  warning: false\n  cache: true\n  freeze: auto\n\nThe execute options will apply to everything (I think - doesn’t work for all options).\n\nprofile:\n  default: slides\n  group:\n  - [slides, book]\nThis is where a lot of the magic happens! The profiles allow for easy switching between output formats, each of which has their own option.\n\nThe default profile being “slides” means that Ctrl+Shift+K will preview to slides!\n\nYou can change this depending on what you’re developing."
-  },
-  {
-    "objectID": "L03-quarto-book-yml.html",
-    "href": "L03-quarto-book-yml.html",
-    "title": "3  The _quarto-book.yml file",
-    "section": "",
-    "text": "There’s a lot more going on in this file!\nproject:\n  type: book\n  output-dir: docs\n\nnumber-depth: 2\n\nThe type defines the book, and we pass further options in the next bit.\noutput-dir: docs is important!\nnumber-depth just says we’ll use chapters like 3.2, rather than just having chapter 3 with a bunch of un-numbered sub-headings.\n\nbook:\n  title: \"Quarto Course Notes\"\n  subtitle: \"Slides and a Book\"\n  repo-url: https://github.com/DB7-CourseNotes/QuorseNotes\n  repo-actions: [issue, source]  \nThe above chunk defines the titles and the location of the book. By providing the repo url, you give readers an easy way to find the source code (I hide this from my students, but acknowledge that they might find it one day).\n  page-footer:\n    left: |\n      Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.\n  sidebar: \n    collapse-level: 2\n  page-navigation: true\n\ncollapse-level is useful when “parts” are defined. It helps keep the sidebar a little cleaner by collapsing parts.\n\n  chapters:\n    - index.qmd\n    - part: Setup\n      chapters:\n        - L01.qmd\n    - part: Slides and Book\n      chapters:\n        - L02-quarto-yml.qmd\n        - L03-quarto-book-yml.qmd\n        - L04-quarto-slides-yml.qmd\n        - L05-advanced.qmd\n  appendices:\n    - Lab01-R.Rmd\n    - Lab02-Python.ipynb\n    - DGBecker_QuorseNotes.qmd\nIn the chunk above, we tell the book exactly what to include and where. These are the exact file names, and if you rename a file you must rename it here as well.\nI have it split into parts and an appendix. Note that I also have an index.qmd file that’s not in any chapter.\nformat:\n  html:\n    theme:\n      light: [sandstone, smaller_lists.scss]\n      dark: [superhero, smaller_lists.scss]\n    mainfont: ubuntu, sans-serif\n    execute:\n      echo: true\n      code-fold: true\nIn this chunk, I defined the appearance, font, and some execution options. Code folding allows students to just look at the output, but dig into the code as necessary (it can be turned off for individual code chunks)."
-  },
-  {
-    "objectID": "L04-quarto-slides-yml.html",
-    "href": "L04-quarto-slides-yml.html",
-    "title": "4  The _quarto-slides.yml file",
-    "section": "",
-    "text": "project:\n  output-dir: Slides\n\nSend the slides to the “Slides” directory.\n\nformat: \n  beamer:\n    theme: Madrid\n    colortheme: PrimaryBullets\n    aspectratio: 169\n    toc: false\n    include-in-header: \"defs_beamer.tex\"\n    execute:\n      echo: false\n      fig-width: 7\n      fig-height: 3.5\n      code-line-numbers: false\n\nformat defines the format, but only when the profile is not set to book.\n\nbeamer produces pdf slides, using the \\(\\LaTeX\\) beamer class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.\n\ntheme: Madrid is specific to the beamer class.\ncolortheme: PrimaryBullets uses my custom beamer colortheme (which also affects the theme. this is bad programming on my part, but it looks nice). If you use this, you should change the name, institution, and email in the definition!\naspectratio and toc (table of contents), are beamer specific settings.\ninclude-in-header uses a custom \\(\\LaTeX\\) definition file for spacing in books versus slides. See below.\nexecute makes figures the right size for 16x9 slides. It also makes echo false by default (the book uses true by default).\n\n\n\nFor include-in-header: defs_beamer.tex, I use two special commands to make sure that I can control spacing in the slides and the book separately. In slides, I want to add spacing between lists. The \\lspace command is defined as \\newline if the file is executed without profile --book, and it’s defined as nothing if the profile is set to book. Similarly, \\pspace adds a space between paragraphs if the book is rendering to slides and does nothing for the book."
-  },
-  {
-    "objectID": "L05-advanced.html#webr",
-    "href": "L05-advanced.html#webr",
-    "title": "5  Some advanced things",
-    "section": "5.1 webR",
-    "text": "5.1 webR\nInstructions from this presentation.\nInstall the webR Quarto extension:\nquarto add coatless/quarto-webr\nAdd the webR filter to the yaml:\nformat: revealjs\nfilters:\n  - webr\nAdd a webR code block:\n```{webr-r}\n# set a random seed and generate data\nset.seed(123)\nx &lt;- rnorm(100)\n\n# calculate mean\nmean(x)\n```"
-  },
-  {
-    "objectID": "L05-advanced.html#shinylive",
-    "href": "L05-advanced.html#shinylive",
-    "title": "5  Some advanced things",
-    "section": "5.2 ShinyLive",
-    "text": "5.2 ShinyLive\nShiny Live allows either R or Python shiny apps to be run from within the book - without storing the book on a shiny server! See here for a tutorial.\nEvery time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.\n(This repo does not have an example because the extension adds dependencies. I’ll maybe make another repo just to outline the steps I needed to take.)"
-  },
-  {
-    "objectID": "L05-advanced.html#quizzes-for-your-lms",
-    "href": "L05-advanced.html#quizzes-for-your-lms",
-    "title": "5  Some advanced things",
-    "section": "5.3 Quizzes for your LMS",
-    "text": "5.3 Quizzes for your LMS\nIn my slides, I include something like:\n## Q1\n\nWhich of the following statements is *False*?\n\na. True\nb. False\n\n&lt;!--- B ---&gt;\nA custom R script extracts the “B” from the comment string, then formats an MC question according to my LMS.\nThe question is shown only on the slides, students answer on the LMS.\nThis is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool."
-  },
-  {
-    "objectID": "L05-advanced.html#partially-populated-slides-with-full-notes",
-    "href": "L05-advanced.html#partially-populated-slides-with-full-notes",
-    "title": "5  Some advanced things",
-    "section": "5.4 Partially Populated Slides with Full Notes",
-    "text": "5.4 Partially Populated Slides with Full Notes\n\nSys.getenv(\"QUARTO_PROFILE\")\n\n[1] \"book\"\n\n\nUsing the profile in R:\n\nblank &lt;- function(x) {\n    if(Sys.getenv(\"QUARTO_PROFILE\") == \"book\") {\n        return(x)\n    } else {\n        return(\"________\")\n    }\n}\n\nForgetful Sally was so forgetful that when she tried to remember something she drew a blank."
-  },
-  {
     "objectID": "Lab01-R.html",
     "href": "Lab01-R.html",
     "title": "Appendix A — R Lab 1",
     "section": "",
-    "text": "plot(mpg ~ wt, data = mtcars)"
+    "text": "plot(mpg ~ wt, data = mtcars)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>R Lab 1</span>"
+    ]
   },
   {
     "objectID": "Lab02-Python.html",
     "href": "Lab02-Python.html",
     "title": "Appendix B — Python Lab 1",
     "section": "",
-    "text": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\n\n\nx = np.random.uniform(0, 10, 50)\ne = np.random.normal(0, 3, x.size)\ny = 12 - 5 * x + e\n\nplt.scatter(x, y)\nplt.show()"
+    "text": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\n\n\nx = np.random.uniform(0, 10, 50)\ne = np.random.normal(0, 3, x.size)\ny = 12 - 5 * x + e\n\nplt.scatter(x, y)\nplt.show()",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Python Lab 1</span>"
+    ]
   },
   {
-    "objectID": "DGBecker_QuorseNotes.html#introduction",
-    "href": "DGBecker_QuorseNotes.html#introduction",
-    "title": "Appendix C — Quorse Notes Presentation",
-    "section": "C.1 Introduction",
-    "text": "C.1 Introduction\n\nOverview\n\nThese are slides… or are they?\n\nIf you’re reading this, the answer is no! This is a portion that is only visible when compiled as a book!\n\n\nWorkflow Preview\nOnce everything is set up:\n\nMake slides (or adapt from elsewhere)\nAdd in participation activities\nDo some live demonstrations in class\nPush to GitHub after class\n\nEverything is now available to the students on a website\n\n\n\n\nMain Benefits\n\nOpen source and reproducible\nEasy to use, searchable book for students including all information from class\nOnly one extra step on top of Quarto slides!"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quarto Course Notes",
+    "section": "",
+    "text": "Introduction",
+    "crumbs": [
+      "Introduction"
+    ]
   },
   {
-    "objectID": "DGBecker_QuorseNotes.html#introduction-to-quarto",
-    "href": "DGBecker_QuorseNotes.html#introduction-to-quarto",
-    "title": "Appendix C — Quorse Notes Presentation",
-    "section": "C.2 Introduction to Quarto",
-    "text": "C.2 Introduction to Quarto\n\nqmd versus Rmd\nIf you rename myfile.Rmd to myfile.qmd, it works exactly the same.\nqmd is the next generation of RMarkdown.\n\nMore code options\nMore output options\nMore language options (python, julia, lua, etc.)\nMore editor options\n\n\n\nThe General Quarto Idea\nOne input file, many outputs.\n\nAccepts qmd, Rmd, and ipynb as input files\nOutputs to pdf, html, docx, pptx, md, epub, odt, etc.\n\n\n\nCode and Prose\nThis is text. The following is R code.\n\n```{r}\n#| eval: false\nprint(\"This is R code, but it won't be executed,\")\n```\n\nHere’s some more text.\n\n```{r}\n#| eval: true\nprint(\"This is R code, and it will be executed,\")\n```\n\n[1] \"This is R code, and it will be executed,\"\n\n\n\n\nMath, too!\nBasic math works in all output formats:\n\n\n\\begin{align}\nma^{th} = f(un)\n\\end{align}\n\n\\[\\begin{align}\nma^{th} = f(un)\n\\end{align}\\]\n\n\n\n\nSo Much More!\n\nCode line numbering, with line highlight.\nInteractive elements (shiny, runnable code, ).\nNon-linear slideshows.\nSo much more!"
+    "objectID": "index.html#this-is-the-quarto-book",
+    "href": "index.html#this-is-the-quarto-book",
+    "title": "Quarto Course Notes",
+    "section": "This is the Quarto Book!",
+    "text": "This is the Quarto Book!\nRendered via:\nquarto render --profile book",
+    "crumbs": [
+      "Introduction"
+    ]
   },
   {
-    "objectID": "DGBecker_QuorseNotes.html#setup-steps",
-    "href": "DGBecker_QuorseNotes.html#setup-steps",
-    "title": "Appendix C — Quorse Notes Presentation",
-    "section": "C.3 Setup Steps",
-    "text": "C.3 Setup Steps\n\nThe YAML files\nYAML: Yet Another Markup Language\n\nBasically, human-readable files that tell a computer what to do.\nYou’ve seen this syntax if you’ve used RMarkdown!\n\nauthor: \"Dr. Devan Becker\"\ndate: \"last-modified\"\ndate-format: \"iso\"\n\nexecute:\n    warning: false\n    cache: true\n\n\nYAML Separation\n\n\n_quarto.yml\ndate-fromat: iso\n...\n\nexecute:\n  warning: false\n  ...\n\nprofile:\n  group:\n  - [slides, book]\n\n_quarto-slides.yml\nproject:\n  output-dir: Slides\n\nformat: \n  beamer:\n    ...\n    execute:\n      echo: false\n      ...\n\n_quarto-slides.yml\nproject:\n  type: book\n  output-dir: docs\nbook:\n  title: \"Quarto Course Notes\"\n  ...\n  chapters:\n    - index.qmd\n    ...\n\nformat:\n  html:\n    ...\n\n\n\nThe _quarto.yml file includes options that apply to everything.\n\nThe profile group indicates that slides are the default.\n\nThe other two have specific options for slides and book, respectively.\n\n\n\nSpecial Things in quarto-book.yml\n\nLinks to the github repo.\nPage headers and footers.\nNavigation options.\nChapters (separated into parts) and appendices.\nThemes/appearance\n\n\n\nGitHub Pages Workflow\n\nIn _quarto-slides.yml, send the outputs whereever\n\nI have a folder called “Slides”, so I use project: output-dir: Slides\n\nIn quarto-book.yml, send the outputs to a folder called “docs”\n\nIt must be called docs for this to work.\n\nOn GitHub, go to Settings -&gt; Pages\n\nChoose “Deploy from a branch”\nChoose “main” and “docs”\n\n\nAnytime you push to the repo, the html files made by quarto are built into a website!\n\nMust “build” the html files locally.\n\n\n\nAlternative Workflows\n\nGithub pages, but use a different branch\n\nAdds some complexity, but allows the source files to be private.\n\nAny static site host\n\nSet output-dir to any folder that gets pushed to the website.\nUseful if you already have a web host set up."
+    "objectID": "L01.html",
+    "href": "L01.html",
+    "title": "1  Setup Justification",
+    "section": "",
+    "text": "1.1 Slides-first mentality\n_quarto.yml assumes that the format is going to be beamer slides. This is because I use VSCode to make my slides, and Cmd-Shift-K will build according to the _quarto.yml file. This means I prototype my notes as slides, then just kinda assume that the book will look good.\nThe _quarto-book.yml has a special name. The -book part tells quarto that it’s part of the “Book” project.",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup Justification</span>"
+    ]
   },
   {
-    "objectID": "DGBecker_QuorseNotes.html#authoring",
-    "href": "DGBecker_QuorseNotes.html#authoring",
-    "title": "Appendix C — Quorse Notes Presentation",
-    "section": "C.4 Authoring",
-    "text": "C.4 Authoring\n\nSome Conveniences\n\nCustom beamer definitions for spacing in slides\n\n\\lspace (list space) is a newline in slides, nothing in book.\n\\pspace (paragraph space) is a whitespace character in slides, nothing in book\n\nSnippets in RStudio\n\nbook-only and not-book, but also LaTeX symbols\n\n\n\n\nConditional Rendering\n\nThese are slides… or are they?\n\n::: {.content-visible when-profile=\"slides\"}\nIf you're reading this, then yes they are!!!\n:::\n\n::: {.content-visible when-profile=\"book\"}\nIf you're reading this, the answer is no! This is a portion that is only\nvisible when compiled as a book!\n:::\nRStudio snippets make these really easy!\n\n\nPreviewing\nWith the given setup, Cmd + Shift + K will build the slides (not book).\nTo see the book you can:\n\nrun quarto preview --profile book in the terminal\nChange the default profile briefly, then change it back.\nLet Quarto do its auto-updating thing!"
+    "objectID": "L01.html#rendering-the-book",
+    "href": "L01.html#rendering-the-book",
+    "title": "1  Setup Justification",
+    "section": "1.2 Rendering the Book",
+    "text": "1.2 Rendering the Book\nquarto render --profile book\nAlternately,\nquarto preview --profile book",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup Justification</span>"
+    ]
+  },
+  {
+    "objectID": "L01.html#conditional-render-by-project",
+    "href": "L01.html#conditional-render-by-project",
+    "title": "1  Setup Justification",
+    "section": "1.3 Conditional Render by Project",
+    "text": "1.3 Conditional Render by Project\nThe following allows for different content in the slides versus the book.\n::: {.content-visible when-profile=\"book\"}\nContent here will only be visible when rendered using --profile book\n:::\n::: {.content-visible unless-profile=\"book\"}\nContent here will only be visible when **not** rendered using --profile book\n:::\nNotice that both of these are defined in .vscode/quarto-bookslides.code-snippets, and thus can be easily inserted when editing with VSCode (I’m not sure of an equivalent workflow in RStudio, but I’m sure it exists).",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup Justification</span>"
+    ]
+  },
+  {
+    "objectID": "L01.html#publishing-on-github",
+    "href": "L01.html#publishing-on-github",
+    "title": "1  Setup Justification",
+    "section": "1.4 Publishing on GitHub",
+    "text": "1.4 Publishing on GitHub\nThe _quarto-book.yml file puts the book in the “docs” folder, and GitHub allows you to serve a static site from the docs/ folder. The output-dir: docs in _quarto-book.yml is required!\nOn GitHub, go to Settings -&gt; Pages and tell it to serve the site from docs/.\nThat’s it! There are no other steps to getting your book as a github website! You’re done!",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup Justification</span>"
+    ]
+  },
+  {
+    "objectID": "L02-quarto-yml.html",
+    "href": "L02-quarto-yml.html",
+    "title": "2  The _quarto.yml file",
+    "section": "",
+    "text": "Let’s go through the file line-by-line.\ndate-fromat: iso\ndate: \"last-modified\"\nauthor: \"Dr. Devan Becker\"\ninstitute: \"Wilfrid Laurier University\"\n\ndate-format to institute are self-explanatory.\n\nSee date formats for more advanced things\n\n\nexecute:\n  warning: false\n  cache: true\n  freeze: auto\n\nThe execute options will apply to everything (I think - doesn’t work for all options).\n\nprofile:\n  default: slides\n  group:\n  - [slides, book]\nThis is where a lot of the magic happens! The profiles allow for easy switching between output formats, each of which has their own option.\n\nThe default profile being “slides” means that Ctrl+Shift+K will preview to slides!\n\nYou can change this depending on what you’re developing.",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The `_quarto.yml` file</span>"
+    ]
+  },
+  {
+    "objectID": "L03-quarto-book-yml.html",
+    "href": "L03-quarto-book-yml.html",
+    "title": "3  The _quarto-book.yml file",
+    "section": "",
+    "text": "There’s a lot more going on in this file!\nproject:\n  type: book\n  output-dir: docs\n\nnumber-depth: 2\n\nThe type defines the book, and we pass further options in the next bit.\noutput-dir: docs is important!\nnumber-depth just says we’ll use chapters like 3.2, rather than just having chapter 3 with a bunch of un-numbered sub-headings.\n\nbook:\n  title: \"Quarto Course Notes\"\n  subtitle: \"Slides and a Book\"\n  repo-url: https://github.com/DB7-CourseNotes/QuorseNotes\n  repo-actions: [issue, source]  \nThe above chunk defines the titles and the location of the book. By providing the repo url, you give readers an easy way to find the source code (I hide this from my students, but acknowledge that they might find it one day).\n  page-footer:\n    left: |\n      Copyright Devan Becker, released under Creative Commons Attribution-ShareAlike 4.0.\n  sidebar: \n    collapse-level: 2\n  page-navigation: true\n\ncollapse-level is useful when “parts” are defined. It helps keep the sidebar a little cleaner by collapsing parts.\n\n  chapters:\n    - index.qmd\n    - part: Setup\n      chapters:\n        - L01.qmd\n    - part: Slides and Book\n      chapters:\n        - L02-quarto-yml.qmd\n        - L03-quarto-book-yml.qmd\n        - L04-quarto-slides-yml.qmd\n        - L05-advanced.qmd\n  appendices:\n    - Lab01-R.Rmd\n    - Lab02-Python.ipynb\n    - DGBecker_QuorseNotes.qmd\nIn the chunk above, we tell the book exactly what to include and where. These are the exact file names, and if you rename a file you must rename it here as well.\nI have it split into parts and an appendix. Note that I also have an index.qmd file that’s not in any chapter.\nformat:\n  html:\n    theme:\n      light: [sandstone, smaller_lists.scss]\n      dark: [superhero, smaller_lists.scss]\n    mainfont: ubuntu, sans-serif\n    execute:\n      echo: true\n      code-fold: true\nIn this chunk, I defined the appearance, font, and some execution options. Code folding allows students to just look at the output, but dig into the code as necessary (it can be turned off for individual code chunks).",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The `_quarto-book.yml` file</span>"
+    ]
+  },
+  {
+    "objectID": "L04-quarto-slides-yml.html",
+    "href": "L04-quarto-slides-yml.html",
+    "title": "4  The _quarto-slides.yml file",
+    "section": "",
+    "text": "project:\n  output-dir: Slides\n\nSend the slides to the “Slides” directory.\n\nformat: \n  beamer:\n    theme: Madrid\n    colortheme: PrimaryBullets\n    aspectratio: 169\n    toc: false\n    include-in-header: \"defs_beamer.tex\"\n    execute:\n      echo: false\n      fig-width: 7\n      fig-height: 3.5\n      code-line-numbers: false\n\nformat defines the format, but only when the profile is not set to book.\n\nbeamer produces pdf slides, using the \\(\\LaTeX\\) beamer class. If this is unfamiliar to you, you can change this to be html slides. The code used for conditional inclusion is based on the profile, not the output format.\n\ntheme: Madrid is specific to the beamer class.\ncolortheme: PrimaryBullets uses my custom beamer colortheme (which also affects the theme. this is bad programming on my part, but it looks nice). If you use this, you should change the name, institution, and email in the definition!\naspectratio and toc (table of contents), are beamer specific settings.\ninclude-in-header uses a custom \\(\\LaTeX\\) definition file for spacing in books versus slides. See below.\nexecute makes figures the right size for 16x9 slides. It also makes echo false by default (the book uses true by default).\n\n\n\nFor include-in-header: defs_beamer.tex, I use two special commands to make sure that I can control spacing in the slides and the book separately. In slides, I want to add spacing between lists. The \\lspace command is defined as \\newline if the file is executed without profile --book, and it’s defined as nothing if the profile is set to book. Similarly, \\pspace adds a space between paragraphs if the book is rendering to slides and does nothing for the book.",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>The `_quarto-slides.yml` file</span>"
+    ]
+  },
+  {
+    "objectID": "L05-advanced.html",
+    "href": "L05-advanced.html",
+    "title": "5  Some advanced things",
+    "section": "",
+    "text": "5.1 webR\nInstructions from this presentation.\nInstall the webR Quarto extension:\nAdd the webR filter to the yaml:\nAdd a webR code block:",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
+  },
+  {
+    "objectID": "L05-advanced.html#webr",
+    "href": "L05-advanced.html#webr",
+    "title": "5  Some advanced things",
+    "section": "",
+    "text": "quarto add coatless/quarto-webr\n\nformat: revealjs\nfilters:\n  - webr\n\n```{webr-r}\n# set a random seed and generate data\nset.seed(123)\nx &lt;- rnorm(100)\n\n# calculate mean\nmean(x)\n```",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
+  },
+  {
+    "objectID": "L05-advanced.html#shinylive",
+    "href": "L05-advanced.html#shinylive",
+    "title": "5  Some advanced things",
+    "section": "5.2 ShinyLive",
+    "text": "5.2 ShinyLive\nShiny Live allows either R or Python shiny apps to be run from within the book - without storing the book on a shiny server! See here for a tutorial.\nEvery time the user opens your book, the shiny app installs all of the required packages. For best results, keep packages to a minimum.\n(This repo does not have an example because the extension adds dependencies. I’ll maybe make another repo just to outline the steps I needed to take.)",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
+  },
+  {
+    "objectID": "L05-advanced.html#quizzes-for-your-lms",
+    "href": "L05-advanced.html#quizzes-for-your-lms",
+    "title": "5  Some advanced things",
+    "section": "5.3 Quizzes for your LMS",
+    "text": "5.3 Quizzes for your LMS\nIn my slides, I include something like:\n## Q1\n\nWhich of the following statements is *False*?\n\na. True\nb. False\n\n&lt;!--- B ---&gt;\nA custom R script extracts the “B” from the comment string, then formats an MC question according to my LMS.\nThe question is shown only on the slides, students answer on the LMS.\nThis is specific to the way I do things, but it has saved quite a bit of time and lets me do quizzes tied to their student numbers without an external tool.",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
+  },
+  {
+    "objectID": "L05-advanced.html#partially-populated-slides-with-full-notes",
+    "href": "L05-advanced.html#partially-populated-slides-with-full-notes",
+    "title": "5  Some advanced things",
+    "section": "5.4 Partially Populated Slides with Full Notes",
+    "text": "5.4 Partially Populated Slides with Full Notes\n\nSys.getenv(\"QUARTO_PROFILE\")\n\n[1] \"book\"\n\n\nUsing the profile in R:\n\nblank &lt;- function(x) {\n    if(Sys.getenv(\"QUARTO_PROFILE\") == \"book\") {\n        return(x)\n    } else {\n        return(\"________\")\n    }\n}\n\nForgetful Sally was so forgetful that when she tried to remember something she drew a blank.",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
   },
   {
     "objectID": "L05-advanced.html#solutions",
     "href": "L05-advanced.html#solutions",
     "title": "5  Some advanced things",
     "section": "5.5 Solutions",
-    "text": "5.5 Solutions\nHow can I get an arbitrary block of text to be hidden until the user asks for it?\n\n\nSolution\n\n&lt;details&gt;\n&lt;summary&gt;**Solution**&lt;/summary&gt;\n\n&lt;/details&gt;"
+    "text": "5.5 Solutions\nHow can I get an arbitrary block of text to be hidden until the user asks for it?\n\n\nSolution\n\n&lt;details&gt;\n&lt;summary&gt;**Solution**&lt;/summary&gt;\n\n&lt;/details&gt;",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html",
+    "href": "DGBecker_QuorseNotes.html",
+    "title": "Appendix C — Quorse Notes Presentation",
+    "section": "",
+    "text": "C.1 Introduction",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quorse Notes Presentation</span>"
+    ]
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#introduction",
+    "href": "DGBecker_QuorseNotes.html#introduction",
+    "title": "Appendix C — Quorse Notes Presentation",
+    "section": "",
+    "text": "Overview\n\nThese are slides… or are they?\n\nIf you’re reading this, the answer is no! This is a portion that is only visible when compiled as a book!\n\n\nWorkflow Preview\nOnce everything is set up:\n\nMake slides (or adapt from elsewhere)\nAdd in participation activities\nDo some live demonstrations in class\nPush to GitHub after class\n\nEverything is now available to the students on a website\n\n\n\n\nMain Benefits\n\nOpen source and reproducible\nEasy to use, searchable book for students including all information from class\nOnly one extra step on top of Quarto slides!",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quorse Notes Presentation</span>"
+    ]
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#introduction-to-quarto",
+    "href": "DGBecker_QuorseNotes.html#introduction-to-quarto",
+    "title": "Appendix C — Quorse Notes Presentation",
+    "section": "C.2 Introduction to Quarto",
+    "text": "C.2 Introduction to Quarto\n\nqmd versus Rmd\nIf you rename myfile.Rmd to myfile.qmd, it works exactly the same.\nqmd is the next generation of RMarkdown.\n\nMore code options\nMore output options\nMore language options (python, julia, lua, etc.)\nMore editor options\n\n\n\nThe General Quarto Idea\nOne input file, many outputs.\n\nAccepts qmd, Rmd, and ipynb as input files\nOutputs to pdf, html, docx, pptx, md, epub, odt, etc.\n\n\n\nCode and Prose\nThis is text. The following is R code.\n\n```{r}\n#| eval: false\nprint(\"This is R code, but it won't be executed,\")\n```\n\nHere’s some more text.\n\n```{r}\n#| eval: true\nprint(\"This is R code, and it will be executed,\")\n```\n\n[1] \"This is R code, and it will be executed,\"\n\n\n\n\nMath, too!\nBasic math works in all output formats:\n\n\n\\begin{align}\nma^{th} = f(un)\n\\end{align}\n\n\\[\\begin{align}\nma^{th} = f(un)\n\\end{align}\\]\n\n\n\n\nSo Much More!\n\nCode line numbering, with line highlight.\nInteractive elements (shiny, runnable code, ).\nNon-linear slideshows.\nSo much more!",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quorse Notes Presentation</span>"
+    ]
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#setup-steps",
+    "href": "DGBecker_QuorseNotes.html#setup-steps",
+    "title": "Appendix C — Quorse Notes Presentation",
+    "section": "C.3 Setup Steps",
+    "text": "C.3 Setup Steps\n\nThe YAML files\nYAML: Yet Another Markup Language\n\nBasically, human-readable files that tell a computer what to do.\nYou’ve seen this syntax if you’ve used RMarkdown!\n\nauthor: \"Dr. Devan Becker\"\ndate: \"last-modified\"\ndate-format: \"iso\"\n\nexecute:\n    warning: false\n    cache: true\n\n\nYAML Separation\n\n\n_quarto.yml\ndate-fromat: iso\n...\n\nexecute:\n  warning: false\n  ...\n\nprofile:\n  group:\n  - [slides, book]\n\n_quarto-slides.yml\nproject:\n  output-dir: Slides\n\nformat: \n  beamer:\n    ...\n    execute:\n      echo: false\n      ...\n\n_quarto-slides.yml\nproject:\n  type: book\n  output-dir: docs\nbook:\n  title: \"Quarto Course Notes\"\n  ...\n  chapters:\n    - index.qmd\n    ...\n\nformat:\n  html:\n    ...\n\n\n\nThe _quarto.yml file includes options that apply to everything.\n\nThe profile group indicates that slides are the default.\n\nThe other two have specific options for slides and book, respectively.\n\n\n\nSpecial Things in quarto-book.yml\n\nLinks to the github repo.\nPage headers and footers.\nNavigation options.\nChapters (separated into parts) and appendices.\nThemes/appearance\n\n\n\nGitHub Pages Workflow\n\nIn _quarto-slides.yml, send the outputs whereever\n\nI have a folder called “Slides”, so I use project: output-dir: Slides\n\nIn quarto-book.yml, send the outputs to a folder called “docs”\n\nIt must be called docs for this to work.\n\nOn GitHub, go to Settings -&gt; Pages\n\nChoose “Deploy from a branch”\nChoose “main” and “docs”\n\n\nAnytime you push to the repo, the html files made by quarto are built into a website!\n\nMust “build” the html files locally.\n\n\n\nAlternative Workflows\n\nGithub pages, but use a different branch\n\nAdds some complexity, but allows the source files to be private.\n\nAny static site host\n\nSet output-dir to any folder that gets pushed to the website.\nUseful if you already have a web host set up.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quorse Notes Presentation</span>"
+    ]
+  },
+  {
+    "objectID": "DGBecker_QuorseNotes.html#authoring",
+    "href": "DGBecker_QuorseNotes.html#authoring",
+    "title": "Appendix C — Quorse Notes Presentation",
+    "section": "C.4 Authoring",
+    "text": "C.4 Authoring\n\nSome Conveniences\n\nCustom beamer definitions for spacing in slides\n\n\\lspace (list space) is a newline in slides, nothing in book.\n\\pspace (paragraph space) is a whitespace character in slides, nothing in book\n\nSnippets in RStudio\n\nbook-only and not-book, but also LaTeX symbols\n\n\n\n\nConditional Rendering\n\nThese are slides… or are they?\n\n::: {.content-visible when-profile=\"slides\"}\nIf you're reading this, then yes they are!!!\n:::\n\n::: {.content-visible when-profile=\"book\"}\nIf you're reading this, the answer is no! This is a portion that is only\nvisible when compiled as a book!\n:::\nRStudio snippets make these really easy!\n\n\nPreviewing\nWith the given setup, Cmd + Shift + K will build the slides (not book).\nTo see the book you can:\n\nrun quarto preview --profile book in the terminal\nChange the default profile briefly, then change it back.\nLet Quarto do its auto-updating thing!",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quorse Notes Presentation</span>"
+    ]
   }
 ]
