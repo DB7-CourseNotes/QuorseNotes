@@ -1,7 +1,8 @@
 ---
-title: "Quorse Notes Presentation"
-subtitle: "Building a Book from Slides"
-code-block-border-left: true
+title: "Quorse Notes Overview Presentation"
+subtitle: "During the presentation (optional): Get a free github account, install git or GitHub desktop, and open RStudio or VSCode"
+date: 2024-06-07
+date-format: "[eCOTS Workshop \\newline ] MMMM DD, YYYY"
 ---
 
 ## Introduction
@@ -17,6 +18,14 @@ If you're reading this, then yes they are!!!
 ::: {.content-visible when-profile="book"}
 If you're reading this, the answer is no! This is a portion that is only visible when compiled as a book!
 :::
+
+<!--- \pspace is a special latex command defined in defs_beamer.tex as an empty space to help with slide content, and defined in defs_pdf.tex to do nothing so that the book chapters are not affected. --->
+
+\pspace
+
+This [slideshow]{.content-visible when-profile="slides"} [book chapter created from a slideshow]{.content-visible when-profile="book"} will introduce the basic workflow and some ideas. (Check the source code for this paragraph).
+
+It will be helpful to have a GitHub account, GitHub desktop installed, and RStudio/VSCode running. 
 
 ### Workflow Preview
 
@@ -85,16 +94,16 @@ Basic \LaTeX math works in all output formats:
 :::: {.columns}
 ::: {.column width="50%"}
 ```txt
-\begin{align}
+$$
 ma^{th} = f(un)
-\end{align}
+$$
 ```
 
 :::
 ::: {.column width="50%"}
-\begin{align}
+$$
 ma^{th} = f(un)
-\end{align}
+$$
 :::
 ::::
 
@@ -163,7 +172,7 @@ format:
 ```
 :::
 ::: {.column width="33%"}
-`_quarto-slides.yml`
+`_quarto-book.yml`
 
 ```yml
 project:
@@ -253,8 +262,23 @@ With the given setup, `Cmd` + `Shift` + `K` will build the *slides* (not book).
 
 \pspace
 
-To see the book you can: 
+To see the book you can either: 
 
-- run `quarto preview --profile book` in the terminal
-- Change the default profile briefly, then change it back.
-- Let Quarto do its auto-updating thing!
+1. Run `quarto preview --profile book` in the terminal
+    - Quarto will update as you edit!
+2. Change the default profile briefly, then change it back.
+
+## Summary
+
+### `qmd` files
+
+- Include code, math, pictures, etc.\lspace
+- Render to slides for class
+    - Control what's included\lspace
+- Render to an online book
+    - Include extra content and capabilities
+    - Hosted publicly for free!
+
+\pspace
+
+Write once, publish anyywhere!
