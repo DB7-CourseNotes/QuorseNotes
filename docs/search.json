@@ -185,6 +185,17 @@
     ]
   },
   {
+    "objectID": "L05-advanced.html#include-from-a-private-repo",
+    "href": "L05-advanced.html#include-from-a-private-repo",
+    "title": "5  Some advanced things",
+    "section": "5.6 Include from a private repo",
+    "text": "5.6 Include from a private repo\nYou can have a separate repo that is private (e.g., if it has quizzes with solutions), then include files from that repo.\n\nAn “include” is a file that is copied verbatim when rendering.",
+    "crumbs": [
+      "Slides and Book",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Some advanced things</span>"
+    ]
+  },
+  {
     "objectID": "DGBecker_QuorseNotes.html",
     "href": "DGBecker_QuorseNotes.html",
     "title": "Appendix C — Quorse Notes Overview Presentation",
