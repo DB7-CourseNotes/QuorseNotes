@@ -85,6 +85,7 @@ blank <- function(x) {
 
 Forgetful Sally was so forgetful that when she tried to remember something she drew a `r blank("blank")`.
 
+
 ## Solutions (html only)
 
 How can I get an arbitrary block of text to be hidden until the user asks for it?
@@ -99,3 +100,9 @@ How can I get an arbitrary block of text to be hidden until the user asks for it
 ```
 
 </details>
+
+## Include from a private repo
+
+You can have a separate repo that is private (e.g., if it has quizzes with solutions), then [include](https://quarto.org/docs/authoring/includes.html) files from that repo. 
+
+- An "include" is a file that is copied verbatim when rendering.
