@@ -41,6 +41,11 @@ Notice that both of these are defined in `.vscode/quarto-bookslides.code-snippet
 
 ## Publishing on GitHub
 
+- See [Getting Started With Git](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git) for some instructions getting git set up.
+    - See [here](https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html) for a wonderful introduction to using git with RStudio.
+- GitHub Desktop can make the process simpler if you aren't comfortable with a command line (outside of R).
+
+
 The `_quarto-book.yml` file puts the book in the "docs" folder, and GitHub allows you to serve a static site (i.e., host a webpage) from the `docs/` folder. The `output-dir: docs` in `_quarto-book.yml` is required!
 
 On GitHub, go to Settings -> Pages and tell it to serve the site from `docs/`. 

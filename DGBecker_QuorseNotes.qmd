@@ -273,12 +273,22 @@ To see the book you can either:
 ### `qmd` files
 
 - Include code, math, pictures, etc.\lspace
-- Render to slides for class
-    - Control what's included\lspace
-- Render to an online book
-    - Include extra content and capabilities
-    - Hosted publicly for free!
+- Render to slides for class.
+    - Control what's included.\lspace
+- Render to an online book.
+    - Include extra content and capabilities.
+    - Hosted publicly for free!\lspace
+- Add class discussion points, make available where the students expect it.
 
 \pspace
 
 Write once, publish anyywhere!
+
+### Limitations
+
+- Stop making new materials!
+    - Search for open source or previous materials, edit for your style!\lspace
+- It's always tempting to use the fancy new hotness - be careful!
+    - More features = less future proof.\lspace
+- If you use my template, you're bound to open source!
+    - You can change it substantially and change the license, but the repo is bound to Sharealike.
