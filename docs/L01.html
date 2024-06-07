@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Devan Becker">
-<meta name="dcterms.date" content="2024-06-06">
+<meta name="dcterms.date" content="2024-06-07">
 
 <title>Quarto Course Notes – 1&nbsp; Setup Justification</title>
 <style>
@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 6, 2024</p>
+      <p class="date">June 7, 2024</p>
     </div>
   </div>
   
@@ -317,6 +317,13 @@ Content here will only be visible when **not** rendered using --profile book
 </section>
 <section id="publishing-on-github" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="publishing-on-github"><span class="header-section-number">1.4</span> Publishing on GitHub</h2>
+<ul>
+<li>See <a href="https://docs.github.com/en/get-started/getting-started-with-git/set-up-git">Getting Started With Git</a> for some instructions getting git set up.
+<ul>
+<li>See <a href="https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html">here</a> for a wonderful introduction to using git with RStudio.</li>
+</ul></li>
+<li>GitHub Desktop can make the process simpler if you aren’t comfortable with a command line (outside of R).</li>
+</ul>
 <p>The <code>_quarto-book.yml</code> file puts the book in the “docs” folder, and GitHub allows you to serve a static site (i.e., host a webpage) from the <code>docs/</code> folder. The <code>output-dir: docs</code> in <code>_quarto-book.yml</code> is required!</p>
 <p>On GitHub, go to Settings -&gt; Pages and tell it to serve the site from <code>docs/</code>.</p>
 <p>That’s it! There are no other steps to getting your book as a github website! You’re done!</p>

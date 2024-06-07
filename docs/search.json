@@ -79,7 +79,7 @@
     "href": "L01.html#publishing-on-github",
     "title": "1  Setup Justification",
     "section": "1.4 Publishing on GitHub",
-    "text": "1.4 Publishing on GitHub\nThe _quarto-book.yml file puts the book in the “docs” folder, and GitHub allows you to serve a static site (i.e., host a webpage) from the docs/ folder. The output-dir: docs in _quarto-book.yml is required!\nOn GitHub, go to Settings -&gt; Pages and tell it to serve the site from docs/.\nThat’s it! There are no other steps to getting your book as a github website! You’re done!",
+    "text": "1.4 Publishing on GitHub\n\nSee Getting Started With Git for some instructions getting git set up.\n\nSee here for a wonderful introduction to using git with RStudio.\n\nGitHub Desktop can make the process simpler if you aren’t comfortable with a command line (outside of R).\n\nThe _quarto-book.yml file puts the book in the “docs” folder, and GitHub allows you to serve a static site (i.e., host a webpage) from the docs/ folder. The output-dir: docs in _quarto-book.yml is required!\nOn GitHub, go to Settings -&gt; Pages and tell it to serve the site from docs/.\nThat’s it! There are no other steps to getting your book as a github website! You’re done!",
     "crumbs": [
       "Setup",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup Justification</span>"
@@ -244,7 +244,7 @@
     "href": "DGBecker_QuorseNotes.html#summary",
     "title": "Appendix C — Quorse Notes Overview Presentation",
     "section": "C.5 Summary",
-    "text": "C.5 Summary\n\nqmd files\n\nInclude code, math, pictures, etc.\nRender to slides for class\n\nControl what’s included\n\nRender to an online book\n\nInclude extra content and capabilities\nHosted publicly for free!\n\n\nWrite once, publish anyywhere!",
+    "text": "C.5 Summary\n\nqmd files\n\nInclude code, math, pictures, etc.\nRender to slides for class.\n\nControl what’s included.\n\nRender to an online book.\n\nInclude extra content and capabilities.\nHosted publicly for free!\n\nAdd class discussion points, make available where the students expect it.\n\nWrite once, publish anyywhere!\n\n\nLimitations\n\nStop making new materials!\n\nSearch for open source or previous materials, edit for your style!\n\nIt’s always tempting to use the fancy new hotness - be careful!\n\nMore features = less future proof.\n\nIf you use my template, you’re bound to open source!\n\nYou can change it substantially and change the license, but the repo is bound to Sharealike.",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>C</span>  <span class='chapter-title'>Quorse Notes Overview Presentation</span>"
