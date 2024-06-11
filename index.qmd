@@ -8,3 +8,9 @@ Rendered via:
 quarto render --profile book
 ```
 
+## Workshop Recording
+
+Below is the recording from the eCOTS workshop. Please note that I tested positive for COVID-19 later on the day of recording, which explains why I was a little disorganized while presenting. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LikgACUgWgU?si=acsKFt66Yw-Lu3_D" title="Quarto Quorse Notes Webinar Recording" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
